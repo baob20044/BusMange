@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BusManageModelStoreContainer" CdmEntityContainer="BusManageEntities">
+    <EntitySetMapping Name="BookedTickets">
+      <EntityTypeMapping TypeName="BusManageModel.BookedTicket">
+        <MappingFragment StoreEntitySet="BookedTickets">
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SeatNumber" ColumnName="SeatNumber" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="TookPlace" ColumnName="TookPlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Buses">
+      <EntityTypeMapping TypeName="BusManageModel.Bus">
+        <MappingFragment StoreEntitySet="Buses">
+          <ScalarProperty Name="BusID" ColumnName="BusID" />
+          <ScalarProperty Name="BusNumber" ColumnName="BusNumber" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="SeatCapacity" ColumnName="SeatCapacity" />
+          <ScalarProperty Name="BusType" ColumnName="BusType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusRoutes">
+      <EntityTypeMapping TypeName="BusManageModel.BusRoute">
+        <MappingFragment StoreEntitySet="BusRoutes">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="StartLocation" ColumnName="StartLocation" />
+          <ScalarProperty Name="EndLocation" ColumnName="EndLocation" />
+          <ScalarProperty Name="TotalDistance" ColumnName="TotalDistance" />
+          <ScalarProperty Name="EstimatedTime" ColumnName="EstimatedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusStops">
+      <EntityTypeMapping TypeName="BusManageModel.BusStop">
+        <MappingFragment StoreEntitySet="BusStops">
+          <ScalarProperty Name="StopID" ColumnName="StopID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="StopName" ColumnName="StopName" />
+          <ScalarProperty Name="StopAddress" ColumnName="StopAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="BusManageModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TotalBill" ColumnName="TotalBill" />
+          <ScalarProperty Name="NumberOfTickets" ColumnName="NumberOfTickets" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="BusManageModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedules">
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleStops">
+      <EntityTypeMapping TypeName="BusManageModel.ScheduleStop">
+        <MappingFragment StoreEntitySet="ScheduleStops">
+          <ScalarProperty Name="ScheduleStopID" ColumnName="ScheduleStopID" />
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="StopID" ColumnName="StopID" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="BusManageModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="AssignedBusID" ColumnName="AssignedBusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="BusManageModel.Ticket">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="BusID" ColumnName="BusID" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="Fare" ColumnName="Fare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BusManageModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

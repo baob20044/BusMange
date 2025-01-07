@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GarageManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="DriverID" />
+    </Key>
+    <Property Name="DriverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LicenseNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Trips" Relationship="Self.FK_dbo_Trips_dbo_Drivers_DriverID" FromRole="Drivers" ToRole="Trips" />
+  </EntityType>
+  <EntityType Name="Freight">
+    <Key>
+      <PropertyRef Name="FreightID" />
+    </Key>
+    <Property Name="FreightID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Receiver" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DeliveryStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Vehicle" Relationship="Self.FK_dbo_Freights_dbo_Vehicles_VehicleID" FromRole="Freights" ToRole="Vehicles" />
+  </EntityType>
+  <EntityType Name="Passenger">
+    <Key>
+      <PropertyRef Name="PassengerID" />
+    </Key>
+    <Property Name="PassengerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_dbo_Tickets_dbo_Passengers_PassengerID" FromRole="Passengers" ToRole="Tickets" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="TicketID" />
+    </Key>
+    <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PassengerID" Type="Int32" Nullable="false" />
+    <Property Name="TripID" Type="Int32" Nullable="false" />
+    <Property Name="SeatNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Passenger" Relationship="Self.FK_dbo_Tickets_dbo_Passengers_PassengerID" FromRole="Tickets" ToRole="Passengers" />
+    <NavigationProperty Name="Trip" Relationship="Self.FK_dbo_Tickets_dbo_Trips_TripID" FromRole="Tickets" ToRole="Trips" />
+  </EntityType>
+  <EntityType Name="Trip">
+    <Key>
+      <PropertyRef Name="TripID" />
+    </Key>
+    <Property Name="TripID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Route" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VehicleID" Type="Int32" Nullable="false" />
+    <Property Name="DriverID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_dbo_Trips_dbo_Drivers_DriverID" FromRole="Trips" ToRole="Drivers" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_dbo_Tickets_dbo_Trips_TripID" FromRole="Trips" ToRole="Tickets" />
+    <NavigationProperty Name="Vehicle" Relationship="Self.FK_dbo_Trips_dbo_Vehicles_VehicleID" FromRole="Trips" ToRole="Vehicles" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="VehicleID" />
+    </Key>
+    <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LicensePlate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Capacity" Type="Int32" Nullable="false" />
+    <Property Name="MaintenanceDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Freights" Relationship="Self.FK_dbo_Freights_dbo_Vehicles_VehicleID" FromRole="Vehicles" ToRole="Freights" />
+    <NavigationProperty Name="Trips" Relationship="Self.FK_dbo_Trips_dbo_Vehicles_VehicleID" FromRole="Vehicles" ToRole="Trips" />
+  </EntityType>
+  <Association Name="FK_dbo_Trips_dbo_Drivers_DriverID">
+    <End Role="Drivers" Type="Self.Driver" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drivers">
+        <PropertyRef Name="DriverID" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="DriverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Freights_dbo_Vehicles_VehicleID">
+    <End Role="Vehicles" Type="Self.Vehicle" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Freights" Type="Self.Freight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicles">
+        <PropertyRef Name="VehicleID" />
+      </Principal>
+      <Dependent Role="Freights">
+        <PropertyRef Name="VehicleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tickets_dbo_Passengers_PassengerID">
+    <End Role="Passengers" Type="Self.Passenger" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Passengers">
+        <PropertyRef Name="PassengerID" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="PassengerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tickets_dbo_Trips_TripID">
+    <End Role="Trips" Type="Self.Trip" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trips">
+        <PropertyRef Name="TripID" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="TripID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Trips_dbo_Vehicles_VehicleID">
+    <End Role="Vehicles" Type="Self.Vehicle" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Trips" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicles">
+        <PropertyRef Name="VehicleID" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="VehicleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GarageManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Drivers" EntityType="Self.Driver" />
+    <EntitySet Name="Freights" EntityType="Self.Freight" />
+    <EntitySet Name="Passengers" EntityType="Self.Passenger" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+    <EntitySet Name="Trips" EntityType="Self.Trip" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+    <AssociationSet Name="FK_dbo_Trips_dbo_Drivers_DriverID" Association="Self.FK_dbo_Trips_dbo_Drivers_DriverID">
+      <End Role="Drivers" EntitySet="Drivers" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Freights_dbo_Vehicles_VehicleID" Association="Self.FK_dbo_Freights_dbo_Vehicles_VehicleID">
+      <End Role="Vehicles" EntitySet="Vehicles" />
+      <End Role="Freights" EntitySet="Freights" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tickets_dbo_Passengers_PassengerID" Association="Self.FK_dbo_Tickets_dbo_Passengers_PassengerID">
+      <End Role="Passengers" EntitySet="Passengers" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tickets_dbo_Trips_TripID" Association="Self.FK_dbo_Tickets_dbo_Trips_TripID">
+      <End Role="Trips" EntitySet="Trips" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Trips_dbo_Vehicles_VehicleID" Association="Self.FK_dbo_Trips_dbo_Vehicles_VehicleID">
+      <End Role="Vehicles" EntitySet="Vehicles" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

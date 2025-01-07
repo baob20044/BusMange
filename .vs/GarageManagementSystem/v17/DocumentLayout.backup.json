@@ -1,0 +1,579 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\model\\busmangecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\model\\busmangecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\payinfopage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\payinfopage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\ticketlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\ticketlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\tickethistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\tickethistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\orderhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\orderhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\userform\\pages\\paycheckpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\paycheckpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\userform\\pages\\payinfopage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\payinfopage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\userform\\pages\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\userform\\pages\\profilepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\component\\user\\seatbed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\seatbed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\user\\seatbed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\seatbed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\scheduleadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\scheduleadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\adminschedulecomp1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\adminschedulecomp1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\schedulestopadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\scheduleadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\scheduleadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\adminform\\pages\\schedulemanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\adminform\\pages\\schedulemanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\user\\ticketschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\ticketschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\component\\user\\ordercomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\ordercomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|d:\\code\\b\u00E0i t\u1EADp c\u00F4 mi\u00EAn\\garagemanagementsystem\\garagemanagementsystem\\component\\user\\ticketcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\ticketcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\user\\ticketcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\ticketcomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\user\\hafltransportnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\hafltransportnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\user\\term.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\term.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\user\\seatdefault.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\user\\seatdefault.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\adminform\\pages\\schedulemanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\adminform\\pages\\schedulemanage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\adminschedulecomp1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\adminschedulecomp1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\garagemanagementsystem\\component\\admin\\adminschedule1\\adminschedulecomp1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}|GarageManagementSystem\\GarageManagementSystem.csproj|solutionrelative:garagemanagementsystem\\component\\admin\\adminschedule1\\adminschedulecomp1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 277,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TicketList.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\TicketList.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\TicketList.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\TicketList.cs",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\TicketList.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAA6wEoAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:39:13.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TicketHistory.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\TicketHistory.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\TicketHistory.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\TicketHistory.cs",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\TicketHistory.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAmwGAAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:39:08.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PayInfoPage.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwDsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:58.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Model\\Ticket.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Model\\Ticket.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Model\\Ticket.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Model\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:46.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1423279789:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BusMangeContext.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Model\\BusMangeContext.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Model\\BusMangeContext.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Model\\BusMangeContext.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Model\\BusMangeContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:42.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomePage.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\HomePage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\HomePage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\HomePage.cs",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\HomePage.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:20.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomePage.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\HomePage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\HomePage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\HomePage.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\HomePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:19.741Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderHistory.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\OrderHistory.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\OrderHistory.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\OrderHistory.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\OrderHistory.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:18.108Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProfilePage.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\ProfilePage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\ProfilePage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\ProfilePage.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\ProfilePage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:38:14.778Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SeatBed.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\SeatBed.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\SeatBed.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\SeatBed.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\SeatBed.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T02:37:48.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ScheduleStopComp.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:31:39.022Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PayInfoPage.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\PayInfoPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:20.298Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PayCheckPage.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\PayCheckPage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\UserForm\\Pages\\PayCheckPage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\UserForm\\Pages\\PayCheckPage.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\UserForm\\Pages\\PayCheckPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:16.623Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ScheduleAdd.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:31:39.578Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminScheduleComp1.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:36:32.858Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ScheduleStopComp.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopComp.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAUwG0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:31:04.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SeatBed.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\SeatBed.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\SeatBed.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\SeatBed.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\SeatBed.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:26.129Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ScheduleStopAdd.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:20:20.142Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ScheduleStopAdd.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleStopAdd.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAUwF4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:22:19.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ScheduleAdd.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\ScheduleAdd.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAALsAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:31:04.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ScheduleManage.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:26:32.774Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TicketSchedule.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\TicketSchedule.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\TicketSchedule.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\TicketSchedule.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\TicketSchedule.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:28.34Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderComp.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\OrderComp.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\OrderComp.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\OrderComp.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\OrderComp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T00:50:38.109Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TicketComp.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\TicketComp.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\TicketComp.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\TicketComp.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\TicketComp.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAEwFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T00:50:29.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TicketComp.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\TicketComp.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\TicketComp.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\TicketComp.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\TicketComp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:27.519Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "HaflTransportNote.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\HaflTransportNote.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\HaflTransportNote.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\HaflTransportNote.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\HaflTransportNote.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:38.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Term.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\Term.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\Term.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\Term.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\Term.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:30.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SeatDefault.cs [Design]",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\SeatDefault.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\User\\SeatDefault.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\User\\SeatDefault.cs [Design]",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\User\\SeatDefault.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T15:21:24.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ScheduleManage.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs",
+              "RelativeToolTip": "GarageManagementSystem\\AdminForm\\Pages\\ScheduleManage.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAowFYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:26:56.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AdminScheduleComp1.Designer.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.Designer.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.Designer.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.Designer.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:36:18.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AdminScheduleComp1.cs",
+              "DocumentMoniker": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs",
+              "RelativeDocumentMoniker": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs",
+              "ToolTip": "D:\\Code\\B\u00E0i t\u1EADp c\u00F4 Mi\u00EAn\\GarageManagementSystem\\GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs",
+              "RelativeToolTip": "GarageManagementSystem\\Component\\Admin\\AdminSchedule1\\AdminScheduleComp1.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T14:36:16.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BusManagementModelStoreContainer" CdmEntityContainer="BusManagementEntities">
+    <EntitySetMapping Name="Buses">
+      <EntityTypeMapping TypeName="BusManagementModel.Bus">
+        <MappingFragment StoreEntitySet="Buses">
+          <ScalarProperty Name="BusID" ColumnName="BusID" />
+          <ScalarProperty Name="BusNumber" ColumnName="BusNumber" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="SeatCapacity" ColumnName="SeatCapacity" />
+          <ScalarProperty Name="BusType" ColumnName="BusType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusRoutes">
+      <EntityTypeMapping TypeName="BusManagementModel.BusRoute">
+        <MappingFragment StoreEntitySet="BusRoutes">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="StartLocation" ColumnName="StartLocation" />
+          <ScalarProperty Name="EndLocation" ColumnName="EndLocation" />
+          <ScalarProperty Name="TotalDistance" ColumnName="TotalDistance" />
+          <ScalarProperty Name="EstimatedTime" ColumnName="EstimatedTime" />
+          <ScalarProperty Name="BaseFare" ColumnName="BaseFare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusStops">
+      <EntityTypeMapping TypeName="BusManagementModel.BusStop">
+        <MappingFragment StoreEntitySet="BusStops">
+          <ScalarProperty Name="StopID" ColumnName="StopID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="StopName" ColumnName="StopName" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="BusManagementModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="AssignedBusID" ColumnName="AssignedBusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="BusManagementModel.Ticket">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="TicketID" ColumnName="TicketID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="BusID" ColumnName="BusID" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="SeatNumber" ColumnName="SeatNumber" />
+          <ScalarProperty Name="Fare" ColumnName="Fare" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BusManagementModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

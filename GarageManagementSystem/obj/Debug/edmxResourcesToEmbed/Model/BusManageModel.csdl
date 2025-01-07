@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BusManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookedTicket">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="SeatNumber" Type="Int32" Nullable="false" />
+    <Property Name="BookingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ticket" Relationship="Self.FK__BookedTic__Ticke__47DBAE45" FromRole="BookedTickets" ToRole="Tickets" />
+    <NavigationProperty Name="User" Relationship="Self.FK__BookedTic__UserI__48CFD27E" FromRole="BookedTickets" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Bus">
+    <Key>
+      <PropertyRef Name="BusID" />
+    </Key>
+    <Property Name="BusID" Type="Int32" Nullable="false" />
+    <Property Name="BusNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="SeatCapacity" Type="Int32" Nullable="false" />
+    <Property Name="BusType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BusRoute" Relationship="Self.FK__Buses__RouteID__398D8EEE" FromRole="Buses" ToRole="BusRoutes" />
+    <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__AssignedB__3F466844" FromRole="Buses" ToRole="Staff" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__BusID__44FF419A" FromRole="Buses" ToRole="Tickets" />
+  </EntityType>
+  <EntityType Name="BusRoute">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="StartLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalDistance" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="EstimatedTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BaseFare" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Buses" Relationship="Self.FK__Buses__RouteID__398D8EEE" FromRole="BusRoutes" ToRole="Buses" />
+    <NavigationProperty Name="BusStops" Relationship="Self.FK__BusStops__RouteI__3C69FB99" FromRole="BusRoutes" ToRole="BusStops" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__RouteID__440B1D61" FromRole="BusRoutes" ToRole="Tickets" />
+  </EntityType>
+  <EntityType Name="BusStop">
+    <Key>
+      <PropertyRef Name="StopID" />
+    </Key>
+    <Property Name="StopID" Type="Int32" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="StopName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ArrivalTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="BusRoute" Relationship="Self.FK__BusStops__RouteI__3C69FB99" FromRole="BusStops" ToRole="BusRoutes" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AssignedBusID" Type="Int32" />
+    <NavigationProperty Name="Bus" Relationship="Self.FK__Staff__AssignedB__3F466844" FromRole="Staff" ToRole="Buses" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="TicketID" />
+    </Key>
+    <Property Name="TicketID" Type="Int32" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="BusID" Type="Int32" Nullable="false" />
+    <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fare" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsReturnTicket" Type="Boolean" Nullable="false" />
+    <Property Name="ReturnDepartureTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BookedTickets" Relationship="Self.FK__BookedTic__Ticke__47DBAE45" FromRole="Tickets" ToRole="BookedTickets" />
+    <NavigationProperty Name="Bus" Relationship="Self.FK__Tickets__BusID__44FF419A" FromRole="Tickets" ToRole="Buses" />
+    <NavigationProperty Name="BusRoute" Relationship="Self.FK__Tickets__RouteID__440B1D61" FromRole="Tickets" ToRole="BusRoutes" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="BookedTickets" Relationship="Self.FK__BookedTic__UserI__48CFD27E" FromRole="Users" ToRole="BookedTickets" />
+  </EntityType>
+  <Association Name="FK__BookedTic__Ticke__47DBAE45">
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="1" />
+    <End Role="BookedTickets" Type="Self.BookedTicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tickets">
+        <PropertyRef Name="TicketID" />
+      </Principal>
+      <Dependent Role="BookedTickets">
+        <PropertyRef Name="TicketID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookedTic__UserI__48CFD27E">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="BookedTickets" Type="Self.BookedTicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="BookedTickets">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Buses__RouteID__398D8EEE">
+    <End Role="BusRoutes" Type="Self.BusRoute" Multiplicity="1" />
+    <End Role="Buses" Type="Self.Bus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusRoutes">
+        <PropertyRef Name="RouteID" />
+      </Principal>
+      <Dependent Role="Buses">
+        <PropertyRef Name="RouteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Staff__AssignedB__3F466844">
+    <End Role="Buses" Type="Self.Bus" Multiplicity="0..1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buses">
+        <PropertyRef Name="BusID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="AssignedBusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tickets__BusID__44FF419A">
+    <End Role="Buses" Type="Self.Bus" Multiplicity="1" />
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buses">
+        <PropertyRef Name="BusID" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="BusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BusStops__RouteI__3C69FB99">
+    <End Role="BusRoutes" Type="Self.BusRoute" Multiplicity="1" />
+    <End Role="BusStops" Type="Self.BusStop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusRoutes">
+        <PropertyRef Name="RouteID" />
+      </Principal>
+      <Dependent Role="BusStops">
+        <PropertyRef Name="RouteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tickets__RouteID__440B1D61">
+    <End Role="BusRoutes" Type="Self.BusRoute" Multiplicity="1" />
+    <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusRoutes">
+        <PropertyRef Name="RouteID" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="RouteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BusManageEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookedTickets" EntityType="Self.BookedTicket" />
+    <EntitySet Name="Buses" EntityType="Self.Bus" />
+    <EntitySet Name="BusRoutes" EntityType="Self.BusRoute" />
+    <EntitySet Name="BusStops" EntityType="Self.BusStop" />
+    <EntitySet Name="Staffs" EntityType="Self.Staff" />
+    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__BookedTic__Ticke__47DBAE45" Association="Self.FK__BookedTic__Ticke__47DBAE45">
+      <End Role="Tickets" EntitySet="Tickets" />
+      <End Role="BookedTickets" EntitySet="BookedTickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookedTic__UserI__48CFD27E" Association="Self.FK__BookedTic__UserI__48CFD27E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BookedTickets" EntitySet="BookedTickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Buses__RouteID__398D8EEE" Association="Self.FK__Buses__RouteID__398D8EEE">
+      <End Role="BusRoutes" EntitySet="BusRoutes" />
+      <End Role="Buses" EntitySet="Buses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Staff__AssignedB__3F466844" Association="Self.FK__Staff__AssignedB__3F466844">
+      <End Role="Buses" EntitySet="Buses" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tickets__BusID__44FF419A" Association="Self.FK__Tickets__BusID__44FF419A">
+      <End Role="Buses" EntitySet="Buses" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BusStops__RouteI__3C69FB99" Association="Self.FK__BusStops__RouteI__3C69FB99">
+      <End Role="BusRoutes" EntitySet="BusRoutes" />
+      <End Role="BusStops" EntitySet="BusStops" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tickets__RouteID__440B1D61" Association="Self.FK__Tickets__RouteID__440B1D61">
+      <End Role="BusRoutes" EntitySet="BusRoutes" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

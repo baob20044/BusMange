@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB3EBDD0-BEA0-48AE-B654-9361F3A5FA12}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GarageManagementSystem</RootNamespace>
+    <AssemblyName>GarageManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\Bai_tap_thay_Toan\StoreManagerPro\GunaUI2-Cracked-2020-2021-main\Guna.UI2 WinForms\4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.9.0.0\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.0.0\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.6.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.6.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Quality, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.Quality.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Snippets, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.Snippets.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.System, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.System.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.WPFonts, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.WPFonts.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\AdminScheduleComp1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\AdminScheduleComp1.Designer.cs">
+      <DependentUpon>AdminScheduleComp1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\ScheduleAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\ScheduleAdd.Designer.cs">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\ScheduleStopAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\ScheduleStopAdd.Designer.cs">
+      <DependentUpon>ScheduleStopAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\ScheduleStopComp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminSchedule1\ScheduleStopComp.Designer.cs">
+      <DependentUpon>ScheduleStopComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\HaflTransportNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\HaflTransportNote.Designer.cs">
+      <DependentUpon>HaflTransportNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\OrderComp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\OrderComp.Designer.cs">
+      <DependentUpon>OrderComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\PhysicalTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\PhysicalTicket.Designer.cs">
+      <DependentUpon>PhysicalTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\ScheduleComp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\ScheduleComp.Designer.cs">
+      <DependentUpon>ScheduleComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\SearchHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\SearchHistory.Designer.cs">
+      <DependentUpon>SearchHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\SeatBed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\SeatBed.Designer.cs">
+      <DependentUpon>SeatBed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\SeatDefault.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\SeatDefault.Designer.cs">
+      <DependentUpon>SeatDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\SeatLimousine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\SeatLimousine.Designer.cs">
+      <DependentUpon>SeatLimousine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\Term.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\Term.Designer.cs">
+      <DependentUpon>Term.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\TicketComp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\TicketComp.Designer.cs">
+      <DependentUpon>TicketComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\TicketSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\TicketSchedule.Designer.cs">
+      <DependentUpon>TicketSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\User\TicketScheduleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\User\TicketScheduleList.Designer.cs">
+      <DependentUpon>TicketScheduleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\Pages\ScheduleManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminForm\Pages\ScheduleManage.Designer.cs">
+      <DependentUpon>ScheduleManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\DoneTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\DoneTicket.Designer.cs">
+      <DependentUpon>DoneTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\OrderHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\OrderHistory.Designer.cs">
+      <DependentUpon>OrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\PayCheckPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\PayCheckPage.Designer.cs">
+      <DependentUpon>PayCheckPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\PayInfoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\PayInfoPage.Designer.cs">
+      <DependentUpon>PayInfoPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\ProfilePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\ProfilePage.Designer.cs">
+      <DependentUpon>ProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\SchedulePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\SchedulePage.Designer.cs">
+      <DependentUpon>SchedulePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\TicketHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\TicketHistory.Designer.cs">
+      <DependentUpon>TicketHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Pages\TicketList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserForm\Pages\TicketList.Designer.cs">
+      <DependentUpon>TicketList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm\Authentication\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Authentication\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BookedTicket.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Bus.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BusManage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusManage.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BusManage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BusManage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusManage.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BusMangeContext.cs" />
+    <Compile Include="Model\BusRoute.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BusStop.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Schedule.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScheduleStop.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Staff.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Ticket.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>BusManage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserForm\Authentication\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm\Authentication\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminSchedule1\AdminScheduleComp1.resx">
+      <DependentUpon>AdminScheduleComp1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminSchedule1\ScheduleAdd.resx">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminSchedule1\ScheduleStopAdd.resx">
+      <DependentUpon>ScheduleStopAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminSchedule1\ScheduleStopComp.resx">
+      <DependentUpon>ScheduleStopComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\HaflTransportNote.resx">
+      <DependentUpon>HaflTransportNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\OrderComp.resx">
+      <DependentUpon>OrderComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\PhysicalTicket.resx">
+      <DependentUpon>PhysicalTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\ScheduleComp.resx">
+      <DependentUpon>ScheduleComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\SearchHistory.resx">
+      <DependentUpon>SearchHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\SeatBed.resx">
+      <DependentUpon>SeatBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\SeatDefault.resx">
+      <DependentUpon>SeatDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\SeatLimousine.resx">
+      <DependentUpon>SeatLimousine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\Term.resx">
+      <DependentUpon>Term.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\TicketComp.resx">
+      <DependentUpon>TicketComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\TicketSchedule.resx">
+      <DependentUpon>TicketSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\User\TicketScheduleList.resx">
+      <DependentUpon>TicketScheduleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm\Pages\ScheduleManage.resx">
+      <DependentUpon>ScheduleManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Authentication\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Authentication\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\DoneTicket.resx">
+      <DependentUpon>DoneTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\OrderHistory.resx">
+      <DependentUpon>OrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\PayCheckPage.resx">
+      <DependentUpon>PayCheckPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\PayInfoPage.resx">
+      <DependentUpon>PayInfoPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\ProfilePage.resx">
+      <DependentUpon>ProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\SchedulePage.resx">
+      <DependentUpon>SchedulePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\TicketHistory.resx">
+      <DependentUpon>TicketHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm\Pages\TicketList.resx">
+      <DependentUpon>TicketList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Model\BusManage.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BusManage.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\BusManage.edmx.diagram">
+      <DependentUpon>BusManage.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\BusManage.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusManage.edmx</DependentUpon>
+      <LastGenOutput>BusManage.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\BusManage.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BusManage.edmx</DependentUpon>
+      <LastGenOutput>BusManage.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\Car Seat.png" />
+    <Content Include="Resources\Clock.png" />
+    <Content Include="Resources\Closed_Eye.png" />
+    <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\Expired.png" />
+    <Content Include="Resources\Eye.png" />
+    <Content Include="Resources\futabusBanner.png" />
+    <Content Include="Resources\futapay.png" />
+    <Content Include="Resources\menu_woman.png" />
+    <Content Include="Resources\momo.png" />
+    <Content Include="Resources\Money Bag.png" />
+    <Content Include="Resources\Point.png" />
+    <Content Include="Resources\Switch.png" />
+    <Content Include="Resources\User-removebg-preview.png" />
+    <Content Include="Resources\User.png" />
+    <Content Include="Resources\viettelpay.png" />
+    <Content Include="Resources\Visit.png" />
+    <Content Include="Resources\vnpay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+</Project>

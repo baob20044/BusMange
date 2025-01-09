@@ -30,17 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleAdd));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnEditDistance = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btbAddRouteName = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnDeleteRoute = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnViewDetailRoute = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnAddStopName = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAddSchedule = new Guna.UI2.WinForms.Guna2Button();
             this.txtRouteInfo = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSelectRoute = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.datepicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbStart = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnEditDistance = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btbAddRouteName = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnDeleteRoute = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnViewDetailRoute = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnAddStopName = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.datepicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnAddStop = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1.SuspendLayout();
@@ -87,86 +87,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(1210, 760);
             this.guna2Panel1.TabIndex = 3;
-            // 
-            // btnEditDistance
-            // 
-            this.btnEditDistance.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditDistance.CheckedState.Parent = this.btnEditDistance;
-            this.btnEditDistance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditDistance.HoverState.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnEditDistance.HoverState.Parent = this.btnEditDistance;
-            this.btnEditDistance.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDistance.Image")));
-            this.btnEditDistance.Location = new System.Drawing.Point(874, 83);
-            this.btnEditDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEditDistance.Name = "btnEditDistance";
-            this.btnEditDistance.PressedState.Parent = this.btnEditDistance;
-            this.btnEditDistance.Size = new System.Drawing.Size(32, 23);
-            this.btnEditDistance.TabIndex = 110;
-            this.btnEditDistance.Click += new System.EventHandler(this.btnEditDistance_Click);
-            // 
-            // btbAddRouteName
-            // 
-            this.btbAddRouteName.BackColor = System.Drawing.Color.Transparent;
-            this.btbAddRouteName.CheckedState.Parent = this.btbAddRouteName;
-            this.btbAddRouteName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btbAddRouteName.HoverState.ImageSize = new System.Drawing.Size(22, 22);
-            this.btbAddRouteName.HoverState.Parent = this.btbAddRouteName;
-            this.btbAddRouteName.Image = ((System.Drawing.Image)(resources.GetObject("btbAddRouteName.Image")));
-            this.btbAddRouteName.Location = new System.Drawing.Point(198, 27);
-            this.btbAddRouteName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btbAddRouteName.Name = "btbAddRouteName";
-            this.btbAddRouteName.PressedState.Parent = this.btbAddRouteName;
-            this.btbAddRouteName.Size = new System.Drawing.Size(42, 36);
-            this.btbAddRouteName.TabIndex = 109;
-            this.btbAddRouteName.Click += new System.EventHandler(this.btbAddRouteName_Click);
-            // 
-            // btnDeleteRoute
-            // 
-            this.btnDeleteRoute.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteRoute.CheckedState.Parent = this.btnDeleteRoute;
-            this.btnDeleteRoute.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteRoute.HoverState.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnDeleteRoute.HoverState.Parent = this.btnDeleteRoute;
-            this.btnDeleteRoute.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRoute.Image")));
-            this.btnDeleteRoute.Location = new System.Drawing.Point(906, 199);
-            this.btnDeleteRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDeleteRoute.Name = "btnDeleteRoute";
-            this.btnDeleteRoute.PressedState.Parent = this.btnDeleteRoute;
-            this.btnDeleteRoute.Size = new System.Drawing.Size(30, 30);
-            this.btnDeleteRoute.TabIndex = 108;
-            this.btnDeleteRoute.Click += new System.EventHandler(this.btnDeleteRoute_Click);
-            // 
-            // btnViewDetailRoute
-            // 
-            this.btnViewDetailRoute.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewDetailRoute.CheckedState.Parent = this.btnViewDetailRoute;
-            this.btnViewDetailRoute.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewDetailRoute.HoverState.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnViewDetailRoute.HoverState.Parent = this.btnViewDetailRoute;
-            this.btnViewDetailRoute.Image = ((System.Drawing.Image)(resources.GetObject("btnViewDetailRoute.Image")));
-            this.btnViewDetailRoute.Location = new System.Drawing.Point(834, 199);
-            this.btnViewDetailRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnViewDetailRoute.Name = "btnViewDetailRoute";
-            this.btnViewDetailRoute.PressedState.Parent = this.btnViewDetailRoute;
-            this.btnViewDetailRoute.Size = new System.Drawing.Size(30, 30);
-            this.btnViewDetailRoute.TabIndex = 107;
-            this.btnViewDetailRoute.Click += new System.EventHandler(this.btnViewDetailRoute_Click);
-            // 
-            // btnAddStopName
-            // 
-            this.btnAddStopName.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddStopName.CheckedState.Parent = this.btnAddStopName;
-            this.btnAddStopName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddStopName.HoverState.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnAddStopName.HoverState.Parent = this.btnAddStopName;
-            this.btnAddStopName.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStopName.Image")));
-            this.btnAddStopName.Location = new System.Drawing.Point(870, 199);
-            this.btnAddStopName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddStopName.Name = "btnAddStopName";
-            this.btnAddStopName.PressedState.Parent = this.btnAddStopName;
-            this.btnAddStopName.Size = new System.Drawing.Size(30, 30);
-            this.btnAddStopName.TabIndex = 106;
-            this.btnAddStopName.Click += new System.EventHandler(this.btnAddStopName_Click);
             // 
             // label7
             // 
@@ -248,34 +168,6 @@
             this.label6.Size = new System.Drawing.Size(81, 23);
             this.label6.TabIndex = 101;
             this.label6.Text = "Thời gian";
-            // 
-            // datepicker1
-            // 
-            this.datepicker1.BackColor = System.Drawing.Color.White;
-            this.datepicker1.BorderRadius = 1;
-            this.datepicker1.Checked = false;
-            this.datepicker1.Color = System.Drawing.Color.Gainsboro;
-            this.datepicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.datepicker1.CustomFormat = "yyyy-MM-dd";
-            this.datepicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.datepicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.datepicker1.DisabledColor = System.Drawing.Color.Gray;
-            this.datepicker1.DisplayWeekNumbers = false;
-            this.datepicker1.DPHeight = 0;
-            this.datepicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.datepicker1.FillDatePicker = true;
-            this.datepicker1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.datepicker1.ForeColor = System.Drawing.Color.Black;
-            this.datepicker1.Icon = ((System.Drawing.Image)(resources.GetObject("datepicker1.Icon")));
-            this.datepicker1.IconColor = System.Drawing.SystemColors.Control;
-            this.datepicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.datepicker1.LeftTextMargin = 5;
-            this.datepicker1.Location = new System.Drawing.Point(74, 195);
-            this.datepicker1.MinimumSize = new System.Drawing.Size(4, 32);
-            this.datepicker1.Name = "datepicker1";
-            this.datepicker1.Size = new System.Drawing.Size(352, 34);
-            this.datepicker1.TabIndex = 100;
-            this.datepicker1.ValueChanged += new System.EventHandler(this.datepicker1_ValueChanged);
             // 
             // flowLayoutPanel
             // 
@@ -397,6 +289,114 @@
             this.cbStart.ShadowDecoration.Parent = this.cbStart;
             this.cbStart.Size = new System.Drawing.Size(271, 36);
             this.cbStart.TabIndex = 90;
+            // 
+            // btnEditDistance
+            // 
+            this.btnEditDistance.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditDistance.CheckedState.Parent = this.btnEditDistance;
+            this.btnEditDistance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditDistance.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnEditDistance.HoverState.Parent = this.btnEditDistance;
+            this.btnEditDistance.Image = ((System.Drawing.Image)(resources.GetObject("btnEditDistance.Image")));
+            this.btnEditDistance.Location = new System.Drawing.Point(874, 83);
+            this.btnEditDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditDistance.Name = "btnEditDistance";
+            this.btnEditDistance.PressedState.Parent = this.btnEditDistance;
+            this.btnEditDistance.Size = new System.Drawing.Size(32, 23);
+            this.btnEditDistance.TabIndex = 110;
+            this.btnEditDistance.Click += new System.EventHandler(this.btnEditDistance_Click);
+            // 
+            // btbAddRouteName
+            // 
+            this.btbAddRouteName.BackColor = System.Drawing.Color.Transparent;
+            this.btbAddRouteName.CheckedState.Parent = this.btbAddRouteName;
+            this.btbAddRouteName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btbAddRouteName.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btbAddRouteName.HoverState.Parent = this.btbAddRouteName;
+            this.btbAddRouteName.Image = ((System.Drawing.Image)(resources.GetObject("btbAddRouteName.Image")));
+            this.btbAddRouteName.Location = new System.Drawing.Point(198, 27);
+            this.btbAddRouteName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btbAddRouteName.Name = "btbAddRouteName";
+            this.btbAddRouteName.PressedState.Parent = this.btbAddRouteName;
+            this.btbAddRouteName.Size = new System.Drawing.Size(42, 36);
+            this.btbAddRouteName.TabIndex = 109;
+            this.btbAddRouteName.Click += new System.EventHandler(this.btbAddRouteName_Click);
+            // 
+            // btnDeleteRoute
+            // 
+            this.btnDeleteRoute.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteRoute.CheckedState.Parent = this.btnDeleteRoute;
+            this.btnDeleteRoute.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteRoute.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnDeleteRoute.HoverState.Parent = this.btnDeleteRoute;
+            this.btnDeleteRoute.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteRoute.Image")));
+            this.btnDeleteRoute.Location = new System.Drawing.Point(906, 199);
+            this.btnDeleteRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteRoute.Name = "btnDeleteRoute";
+            this.btnDeleteRoute.PressedState.Parent = this.btnDeleteRoute;
+            this.btnDeleteRoute.Size = new System.Drawing.Size(30, 30);
+            this.btnDeleteRoute.TabIndex = 108;
+            this.btnDeleteRoute.Click += new System.EventHandler(this.btnDeleteRoute_Click);
+            // 
+            // btnViewDetailRoute
+            // 
+            this.btnViewDetailRoute.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewDetailRoute.CheckedState.Parent = this.btnViewDetailRoute;
+            this.btnViewDetailRoute.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewDetailRoute.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnViewDetailRoute.HoverState.Parent = this.btnViewDetailRoute;
+            this.btnViewDetailRoute.Image = ((System.Drawing.Image)(resources.GetObject("btnViewDetailRoute.Image")));
+            this.btnViewDetailRoute.Location = new System.Drawing.Point(834, 199);
+            this.btnViewDetailRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewDetailRoute.Name = "btnViewDetailRoute";
+            this.btnViewDetailRoute.PressedState.Parent = this.btnViewDetailRoute;
+            this.btnViewDetailRoute.Size = new System.Drawing.Size(30, 30);
+            this.btnViewDetailRoute.TabIndex = 107;
+            this.btnViewDetailRoute.Click += new System.EventHandler(this.btnViewDetailRoute_Click);
+            // 
+            // btnAddStopName
+            // 
+            this.btnAddStopName.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddStopName.CheckedState.Parent = this.btnAddStopName;
+            this.btnAddStopName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddStopName.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnAddStopName.HoverState.Parent = this.btnAddStopName;
+            this.btnAddStopName.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStopName.Image")));
+            this.btnAddStopName.Location = new System.Drawing.Point(870, 199);
+            this.btnAddStopName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddStopName.Name = "btnAddStopName";
+            this.btnAddStopName.PressedState.Parent = this.btnAddStopName;
+            this.btnAddStopName.Size = new System.Drawing.Size(30, 30);
+            this.btnAddStopName.TabIndex = 106;
+            this.btnAddStopName.Click += new System.EventHandler(this.btnAddStopName_Click);
+            // 
+            // datepicker1
+            // 
+            this.datepicker1.BackColor = System.Drawing.Color.White;
+            this.datepicker1.BorderRadius = 1;
+            this.datepicker1.Checked = false;
+            this.datepicker1.Color = System.Drawing.Color.Gainsboro;
+            this.datepicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.datepicker1.CustomFormat = "yyyy-MM-dd";
+            this.datepicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.datepicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.datepicker1.DisabledColor = System.Drawing.Color.Gray;
+            this.datepicker1.DisplayWeekNumbers = false;
+            this.datepicker1.DPHeight = 0;
+            this.datepicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.datepicker1.FillDatePicker = true;
+            this.datepicker1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.datepicker1.ForeColor = System.Drawing.Color.Black;
+            this.datepicker1.Icon = ((System.Drawing.Image)(resources.GetObject("datepicker1.Icon")));
+            this.datepicker1.IconColor = System.Drawing.SystemColors.Control;
+            this.datepicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.datepicker1.LeftTextMargin = 5;
+            this.datepicker1.Location = new System.Drawing.Point(74, 195);
+            this.datepicker1.MinimumSize = new System.Drawing.Size(4, 32);
+            this.datepicker1.Name = "datepicker1";
+            this.datepicker1.Size = new System.Drawing.Size(352, 34);
+            this.datepicker1.TabIndex = 100;
+            this.datepicker1.ValueChanged += new System.EventHandler(this.datepicker1_ValueChanged);
             // 
             // btnClose
             // 

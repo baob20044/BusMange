@@ -20,15 +20,24 @@ namespace GarageManagementSystem.Component.Admin.AdminSchedule1
         private int ScheduleId;
         public event Action ScheduleStopAdded;
 
-        public ScheduleStopAdd(int ScheduleID = 0)
+        public ScheduleStopAdd(int ScheduleID = 0,string date = "",int RouteId = 0)
         {
             InitializeComponent();
             ScheduleId = ScheduleID;
-
+            if (!string.IsNullOrEmpty(date) && DateTime.TryParse(date, out DateTime parsedDate))
+            {
+                dateTimePicker1.Value = parsedDate;  // Set the Value of the DateTimePicker
+            }
+            else
+            {
+                // Set the DateTimePicker to the current date if the provided date is invalid
+                dateTimePicker1.Value = DateTime.Now;
+            }
             using (_context = new BusManageContext())
             {
                 // Fetch StopID and StopName from the BusStops table
                 var busStops = _context.BusStops
+                    .Where(s => s.RouteID == RouteId)
                     .Select(bs => new { bs.StopID, bs.StopName })
                     .ToList();
 
@@ -90,7 +99,7 @@ namespace GarageManagementSystem.Component.Admin.AdminSchedule1
                 MessageBox.Show("Thêm điểm dừng lịch trình thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Close the current UserControl (optional)
-                this.Parent.Controls.Remove(this);
+                //this.Parent.Controls.Remove(this);
             }
         }
     }

@@ -53,10 +53,14 @@ namespace GarageManagementSystem.FormUser.Pages
                         var route = _context.BusRoutes.FirstOrDefault(r => r.RouteID == ticket.RouteID);
                         if (route == null) return false;
 
-                        // Get the departure time from the Tickets table
-                        var departTime = _context.Tickets.Where(s => s.TicketID == bookedTicket.TicketID)
-                                                         .Select(s => s.DepartureTime)
-                                                         .FirstOrDefault();
+                        // Get the departure time from the Tickets table (the date only)
+                        var departTime = _context.Tickets
+                                                  .Where(t => t.TicketID == bookedTicket.TicketID)
+                                                  .Join(_context.Schedules,
+                                                        t => t.ScheduleID,
+                                                        s => s.ScheduleID,
+                                                        (t, s) => s.Date)  // Assuming `Date` represents the departure time
+                                                  .FirstOrDefault();
 
                         // Filter based on the selected date (ignoring time)
                         return departTime.Date == selectedDate.Date;
@@ -90,35 +94,45 @@ namespace GarageManagementSystem.FormUser.Pages
                                 bs => bs.StopID,         // Match BusStop StopID with ScheduleStop StopID
                                 ss => ss.StopID,         // Match ScheduleStop StopID with BusStop StopID
                                 (bs, ss) => new {        // Create an anonymous object with BusStop and ArrivalTime
-                                    StopName = bs.StopName,
-                                    StopID = bs.StopID,
-                                    ArrivalTime = ss.ArrivalTime
+                                    bs.StopName,
+                                    bs.StopID,
+                                    ss.ArrivalTime,
+                                    ss.ScheduleID  // Include the ScheduleID for the join with Schedules
                                 })
-                            .Where(x => DbFunctions.TruncateTime(x.ArrivalTime) == DbFunctions.TruncateTime(ticket.DepartureTime)) // Ensure date-only match
+                            .Join(
+                                _context.Schedules,  // Join with Schedules to get DepartureTime
+                                ss => ss.ScheduleID, // Match ScheduleID from ScheduleStops to Schedules
+                                s => s.ScheduleID,   // Match ScheduleID from Schedules to ScheduleStops
+                                (ss, s) => new {     // Create an anonymous object with Schedule, ArrivalTime, and BusStop
+                                    ss.StopName,
+                                    ss.StopID,
+                                    ss.ArrivalTime,
+                                    s.Date            // Date of the schedule (departure date)
+                                })
                             .ToList();
 
-                        // Find the bus stop that matches TookPlace
+                        // Find the bus stop that matches TookPlace and filter by Date
                         var matchedBusStop = busStops
-                            .FirstOrDefault(bs => bs.StopName == tookPlace);
+                            .FirstOrDefault(bs => bs.StopName == tookPlace && bs.Date.Date == selectedDate.Date);
 
                         string busStopBegin = matchedBusStop?.StopName ?? "";
                         string busStopLast = busStops.LastOrDefault()?.StopName ?? "";
 
-                        // Get the ArrivalTime from ScheduleStops based on the tookPlace stop
-                        var arrivalTime = busStops
-                            .FirstOrDefault(bs => bs.StopName == tookPlace)?.ArrivalTime;
+                        // Get the ArrivalTime for the specific "tookPlace" and filter by date
+                        var matchedArrivalTime = busStops
+                            .FirstOrDefault(bs => bs.StopName == tookPlace && bs.Date.Date == selectedDate.Date)?.ArrivalTime;
 
-                        // Check if ArrivalTime is valid before formatting
                         string arrivalTimeStr = string.Empty;
-                        if (arrivalTime.HasValue)
+                        if (matchedArrivalTime.HasValue)
                         {
                             try
                             {
-                                arrivalTimeStr = arrivalTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                                // Format the ArrivalTime to "yyyy-MM-dd HH:mm:ss"
+                                arrivalTimeStr = matchedArrivalTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
                             }
                             catch (FormatException ex)
                             {
-                                // Handle formatting error (just in case the DateTime format is invalid)
+                                // Handle formatting error
                                 arrivalTimeStr = "Invalid Date";
                                 Console.WriteLine($"Error formatting ArrivalTime: {ex.Message}");
                             }
@@ -143,6 +157,8 @@ namespace GarageManagementSystem.FormUser.Pages
                 Console.Write(e.Message);
             }
         }
+
+
         // Call LoadTicketHistory initially to load tickets
         private void TicketHistory_Load(object sender, EventArgs e)
         {

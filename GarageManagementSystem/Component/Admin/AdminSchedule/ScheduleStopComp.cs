@@ -1,4 +1,5 @@
-﻿using GarageManagementSystem.Model;
+﻿using GarageManagementSystem.Component.Admin.AdminSchedule;
+using GarageManagementSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,27 +19,27 @@ namespace GarageManagementSystem.Component.Admin.AdminScheduleComp
         private int StopID;
         private int ScheduleID;
         private DateTime ArrivalTime;
-
-        public ScheduleStopComp(int stopID, string date, int scheduleID)
+        private int SchuleStopID = 0;
+        private int RouteId = 0;
+        public ScheduleStopComp(int stopID, string date, int scheduleID, int routeId)
         {
             InitializeComponent();
 
             StopID = stopID;
             ScheduleID = scheduleID;
-
+            RouteId = routeId;
             // Parse the date string outside the LINQ query
             DateTime parsedDate = DateTime.Parse(date);
             ArrivalTime = parsedDate;
-
             using (_context = new BusManageContext())
             {
                 // Modify the LINQ query to find the ScheduleStop
                 var scheduleStop = _context.ScheduleStops
                     .Where(ss => ss.StopID == StopID &&
-                                 ss.ScheduleID == ScheduleID &&
-                                 DbFunctions.TruncateTime(ss.ArrivalTime) == parsedDate.Date)
+                                 ss.ScheduleID == ScheduleID)
                     .FirstOrDefault();
-
+                SchuleStopID = scheduleStop.ScheduleStopID;
+                
                 if (scheduleStop != null)
                 {
                     // Get the associated BusStop info
@@ -60,9 +61,11 @@ namespace GarageManagementSystem.Component.Admin.AdminScheduleComp
                     MessageBox.Show("Không tìm thấy điểm dừng phù hợp với ngày đã chọn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
         }
         private void ScheduleStopComp_Load(object sender, EventArgs e)
         {
+
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -106,6 +109,50 @@ namespace GarageManagementSystem.Component.Admin.AdminScheduleComp
             {
                 // If "No" is clicked, do nothing and return
                 return;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+                ScheduleStopEdit add = new ScheduleStopEdit(SchuleStopID, RouteId);
+                this.Parent.Parent.Controls.Add(add);
+                add.ScheduleStopEdited += RefreshBusStop;
+                add.Location = new Point(
+                (this.Parent.Parent.Width - add.Width) / 2,
+                (this.Parent.Parent.Height - add.Height) / 2
+                );
+            add.BringToFront();
+        }
+        private void RefreshBusStop()
+        {
+            using (_context = new BusManageContext())
+            {
+                // Modify the LINQ query to find the ScheduleStop
+                var scheduleStop = _context.ScheduleStops
+                    .Where(ss => ss.StopID == StopID &&
+                                 ss.ScheduleID == ScheduleID)
+                    .FirstOrDefault();
+                SchuleStopID = scheduleStop.ScheduleStopID;
+                if (scheduleStop != null)
+                {
+                    // Get the associated BusStop info
+                    var busStop = _context.BusStops
+                        .Where(s => s.StopID == StopID)
+                        .FirstOrDefault();
+
+                    if (busStop != null)
+                    {
+                        lbStopName.Text = busStop.StopName;
+                        lbStopAddress.Text = busStop.StopAddress;
+                    }
+
+                    // Display ArrivalTime with full date and time format
+                    lbDepartTime.Text = scheduleStop.ArrivalTime.ToString("yyyy-MM-dd HH:mm");
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy điểm dừng phù hợp với ngày đã chọn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
     }

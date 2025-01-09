@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GarageManagementSystem.AdminForm.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace GarageManagementSystem
         private Timer fadeTimer; // Dùng cho chuyển trang
         private bool isNavigatingToLogin = false; // Prevent repeated navigation
         private ScheduleManage scheduleManage;
+        private TicketManage ticketManage;
         public string UserFullName { get; set; }
         public AdminMainForm(int userId = 0, string userFullName ="")
         {
@@ -42,6 +44,7 @@ namespace GarageManagementSystem
         }
         private void lbLogOut_Click(object sender, EventArgs e)
         {
+            UserSession.ClearSession();
             NavigateToLoginForm();
         }
         private void NavigateToLoginForm()
@@ -115,7 +118,9 @@ namespace GarageManagementSystem
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-
+            ticketManage = new TicketManage();
+            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel.Controls.Add(ticketManage);
         }
 
         private void btnBooking_Click(object sender, EventArgs e)

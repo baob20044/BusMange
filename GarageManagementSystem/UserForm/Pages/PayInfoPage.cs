@@ -28,7 +28,12 @@ namespace GarageManagementSystem.FormUser.Pages
             txtEmail.Text = UserSession.Email;
 
             lbFromTo.Text = $"{TicketInfomation.departPlace} - {TicketInfomation.arrivalPlace}";
-            lbDate.Text = TicketInfomation.departTime;
+
+            // Format departTime to DD/MM/YYYY
+            if (DateTime.TryParse(TicketInfomation.departTime, out DateTime formattedDepartTime))
+            {
+                lbDate.Text = formattedDepartTime.ToString("dd/MM/yyyy");
+            }
 
             lbTotalMoney.Text = $"{TicketHelper.Price:N0} đ";
             lbPrice.Text = $"{TicketHelper.Price:N0} đ";
@@ -38,80 +43,66 @@ namespace GarageManagementSystem.FormUser.Pages
             lbSeatList.Text = TicketHelper.SeatList;
             lbSeatCount.Text = TicketHelper.SeatCount.ToString() + " chỗ";
 
-
             using (_context = new BusManageContext())
             {
                 var RouteId = _context.Tickets.Where(s => s.TicketID == TicketHelper.ticketId).FirstOrDefault()?.RouteID;
-                var busStops = _context.BusStops.Where(s => s.RouteID == RouteId);
-                int lastIndex = busStops.Count() - 1;
-                int currentIndex = 0;
-                string FromStop ="";
-                string ToStop="";
-                string departTimeFromStop1 = null;
-                BusStop last = null;
-                foreach (BusStop busStop in busStops)
+                string dateToSchedule = StopBySchedule.date;
+                if (DateTime.TryParse(dateToSchedule, out DateTime scheduleDate))
                 {
-                    // Get the StopID from the BusStop
-                    var stopId = busStop.StopID;
-
-                    // Retrieve DepartureTime from the Tickets table for the current ticket
-                    var departureTime = _context.Tickets
-                        .Where(t => t.TicketID == TicketHelper.ticketId)
-                        .Select(t => t.DepartureTime)
+                    var scheduleId = _context.Schedules
+                        .Where(s => s.RouteID == RouteId && s.Date == scheduleDate)
+                        .Select(s => s.ScheduleID)
                         .FirstOrDefault();
-
-                    if (departureTime != null)
-                    {
-                        // Fetch the first ScheduleStop for the given StopID on the same day as DepartureTime
-                        var scheduleStop = _context.ScheduleStops
-                            .Where(ss => ss.StopID == stopId &&
-                                         ss.ArrivalTime.Year == departureTime.Year &&
-                                         ss.ArrivalTime.Month == departureTime.Month &&
-                                         ss.ArrivalTime.Day == departureTime.Day) // Match year, month, day explicitly
-                            .OrderBy(ss => ss.ArrivalTime) // Ensure it gets the earliest stop
-                            .FirstOrDefault();
-
-                        if (scheduleStop != null)
-                        {
-                            FromStop = busStop.StopName; // Set the FromStop to the current BusStop's StopName
-
-                            // Adjust ArrivalTime to match the same day as DepartureTime
-                            var adjustedArrivalTime = new DateTime(
-                                departureTime.Year,
-                                departureTime.Month,
-                                departureTime.Day,
-                                scheduleStop.ArrivalTime.Hour,
-                                scheduleStop.ArrivalTime.Minute,
-                                scheduleStop.ArrivalTime.Second
-                            );
-
-                            departTimeFromStop1 = adjustedArrivalTime.ToString("yyyy-MM-dd HH:mm"); // Format adjusted ArrivalTime
-                            break; // Exit the loop after finding the first valid match
-                        }
-                    }
+                    StopBySchedule.scheduleid = scheduleId;
                 }
 
+                var scheduleStops = _context.ScheduleStops
+                    .Where(ss => ss.ScheduleID == StopBySchedule.scheduleid)
+                    .Join(
+                        _context.BusStops,
+                        ss => ss.StopID,
+                        bs => bs.StopID,
+                        (ss, bs) => new { ss, bs }
+                    )
+                    .OrderBy(joined => joined.ss.ArrivalTime) // Order by ArrivalTime
+                    .ToList();
 
+                int lastIndex = scheduleStops.Count - 1;
+                int currentIndex = 0;
+                string FromStop = "";
+                string ToStop = "";
+                string departTimeFromStop1 = null;
 
-                foreach (BusStop busStop in busStops)
+                foreach (var stop in scheduleStops)
                 {
+                    if (currentIndex == 0)
+                    {
+                        FromStop = stop.bs.StopName; // Take StopName from BusStops
+                        departTimeFromStop1 = stop.ss.ArrivalTime.ToString("dd/MM/yyyy HH:mm"); // Format ArrivalTime to DD/MM/YYYY
+                    }
+
                     if (currentIndex != lastIndex)
                     {
-                        cbPickSite.Items.Add(busStop.StopName);
+                        cbPickSite.Items.Add(stop.bs.StopName);
                     }
                     currentIndex++;
-                    last = busStop;
                 }
-                string LastStop = last.StopName;
-                cbToSite.Items.Add(LastStop);
-                cbToSite.SelectedItem = LastStop;
-                ToStop = last.StopName;
+
+                var lastStop = scheduleStops.LastOrDefault();
+                if (lastStop != null)
+                {
+                    ToStop = lastStop.bs.StopName;
+                    cbToSite.Items.Add(ToStop);
+                    cbToSite.SelectedItem = ToStop;
+                }
 
                 AddTicketInfo.arrivalStop = FromStop;
                 lbFromToStop.Text = $"{FromStop} đến {ToStop}";
                 AddTicketInfo.FromToStop = lbFromToStop.Text;
                 lbToPlace.Text = ToStop;
                 AddTicketInfo.ToPlace = lbToPlace.Text;
+
+                // Format departTimeFromStop1 to DD/MM/YYYY
                 lbDateGo.Text = departTimeFromStop1;
                 AddTicketInfo.DateGo = lbDateGo.Text;
             }
@@ -134,9 +125,16 @@ namespace GarageManagementSystem.FormUser.Pages
                 {
                     // Fetch the DepartureTime from the Tickets table based on the selected TicketID
                     var departureTime = _context.Tickets
-                        .Where(t => t.TicketID == TicketHelper.ticketId) // Assuming TicketHelper.ticketId holds the selected ticket's ID
-                        .Select(t => t.DepartureTime)
-                        .FirstOrDefault();
+                        .Where(t => t.TicketID == TicketHelper.ticketId) // Filter by TicketID
+                        .Join(
+                            _context.Schedules,  // Join with Schedules table
+                            ticket => ticket.ScheduleID,  // Use ScheduleID from Tickets table
+                            schedule => schedule.ScheduleID,  // Match with ScheduleID in Schedules table
+                            (ticket, schedule) => new { ticket, schedule }  // Project ticket and its associated schedule
+                        )
+                        .Select(ts => ts.schedule.Date)  // Select DepartureTime from the Schedules table
+                        .FirstOrDefault();  // Get the first result (or null if not found)
+
 
                     if (departureTime != null)
                     {
@@ -162,11 +160,11 @@ namespace GarageManagementSystem.FormUser.Pages
                             // Assign the ArrivalTime from ScheduleStops and StopAddress to AddTicketInfo
                             AddTicketInfo.stopAddress = scheduleStop.StopAddress;
 
-                            // Update lbBookInfo with the selected stop and the adjusted arrival time
-                            lbBookInfo.Text = $"{selectedStopName} trước {adjustedArrivalTime}";
+                            // Update lbBookInfo with the selected stop and the adjusted arrival time in DD/MM/YYYY HH:mm format
+                            lbBookInfo.Text = $"{selectedStopName} trước {adjustedArrivalTime.ToString("dd/MM/yyyy HH:mm")}";
 
-                            // Set AddTicketInfo.departTimeStop to the adjusted ArrivalTime
-                            AddTicketInfo.departTimeStop = adjustedArrivalTime.ToString("yyyy-MM-dd HH:mm"); // Adjust format as needed
+                            // Set AddTicketInfo.departTimeStop to the adjusted ArrivalTime formatted as DD/MM/YYYY HH:mm
+                            AddTicketInfo.departTimeStop = adjustedArrivalTime.ToString("dd/MM/yyyy HH:mm");
                         }
                         else
                         {
@@ -187,6 +185,7 @@ namespace GarageManagementSystem.FormUser.Pages
                 }
             }
         }
+
 
 
 

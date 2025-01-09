@@ -326,7 +326,18 @@ namespace GarageManagementSystem
 
                     Properties.Settings.Default.Save();
                     MessageBox.Show("Login successful!");
-                    NavigateToMainPage();
+                    if (user.Role == "UserRole")
+                    {
+                        NavigateToMainPage();
+                    }
+                    else if (user.Role == "AdminRole")
+                    {
+                        NavigateToAdminMainPage();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Role error");
+                    }
                 }
                 else
                 {
@@ -341,5 +352,12 @@ namespace GarageManagementSystem
         public static string PhoneNumber { get; set; }
         public static string Email { get; set; }
         public static int UserId { get; set; }
+        public static void ClearSession()
+        {
+            FullName = null;
+            PhoneNumber = null;
+            Email = null;
+            UserId = 0;
+        }
     }
 }

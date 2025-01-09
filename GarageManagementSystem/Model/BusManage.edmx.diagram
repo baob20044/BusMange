@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="22b04b13b7f44425ba4e55f194a97009" Name="Diagram1">
-        <EntityTypeShape EntityType="BusManageModel.BookedTicket" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.Bus" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.BusRoute" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.BusStop" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.Order" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.Schedule" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.ScheduleStop" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.Staff" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.Ticket" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BusManageModel.User" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="36f810ad50b140dab431d8690b19d756" Name="Diagram1">
+        <EntityTypeShape EntityType="BusManageModel.BookedTicket" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.Bus" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.BusRoute" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.BusStop" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.Order" Width="1.5" PointX="7.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.Schedule" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.ScheduleStop" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.Staff" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.Ticket" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusManageModel.User" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
         <AssociationConnector Association="BusManageModel.FK__BookedTic__Ticke__5BE2A6F2" ManuallyRouted="false" />
         <AssociationConnector Association="BusManageModel.FK__BookedTic__UserI__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="BusManageModel.FK__Buses__RouteID__4F7CD00D" ManuallyRouted="false" />
@@ -26,6 +26,7 @@
         <AssociationConnector Association="BusManageModel.FK_Stop" ManuallyRouted="false" />
         <AssociationConnector Association="BusManageModel.FK__Order__UserID__04E4BC85" ManuallyRouted="false" />
         <AssociationConnector Association="BusManageModel.FK_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="BusManageModel.FK_Tickets_Schedules" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -49,6 +49,7 @@ namespace GarageManagementSystem.FormUser.Pages
             string departTime = datepickerDepart.Value.ToString("yyyy-MM-dd");
             string arrivalTime = rbTwoway.Checked ? datepickerReturn.Value.ToString("yyyy-MM-dd") : "";
 
+            StopBySchedule.date = datepickerDepart.Value.ToString("yyyy-MM-dd");
             TicketList ticketList = new TicketList(fromPlace, toPlace, departTime, arrivalTime);
 
             var mainPage = this.FindForm() as MainForm;
@@ -67,5 +68,10 @@ namespace GarageManagementSystem.FormUser.Pages
                 datepickerReturn.Enabled = false;
             }
         }
+    }
+    public static class StopBySchedule
+    {
+        public static int scheduleid;
+        public static string date;
     }
 }

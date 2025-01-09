@@ -118,6 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="datepicker1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGASURBVFhH7ZbvTcMwEMWD2IBGSCzARz7ymQEYhg3oBIg2
+        WzAQEqm6QzYIedY9cznbqRMnSEj8pJNyz+9819r9U1m6rusRks6mtP5/gN8f4P32/KCLYs+5kapHD+RR
+        aEIcb74eY8+5MVUv7UK0CYHCJc0ZqXppF2KNW4W0C4mZtwhpFxIzbxHSLuSioZC/NwDzUp2kdI81MC/V
+        SUr3WAPzUj0bW6g3K9GzWVyYoKnP94fdaa+HQkDDmth+oEHSxfRVf3Wo2xfdNBbwwCtl4QDanKMDbGjX
+        m7p9fqs/7xB4tut+CAouGdCmHB3oV97sTk8iB2CNPtQ4kYJLBpjn6jhXarq59RE9hLsT1sg8V9cXTiRH
+        TCNcO9bt66QxB9bjnEVyTO2r74Q3flT9tazPgvW4bCI5qEs6Al6/zoe5IXtdHMAG1kYD6D+lc8J1GWCe
+        OgIbWBsdQSmpSzgF/e4SlpL6GKYIPoZrUPRFtAZFX8VrgQ31O5EKeFZvrsG55v8cV9U3j3JxoRqXvekA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAldJREFUeF7t
@@ -134,20 +147,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="datepicker1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGASURBVFhH7ZbvTcMwEMWD2IBGSCzARz7ymQEYhg3oBIg2
-        WzAQEqm6QzYIedY9cznbqRMnSEj8pJNyz+9819r9U1m6rusRks6mtP5/gN8f4P32/KCLYs+5kapHD+RR
-        aEIcb74eY8+5MVUv7UK0CYHCJc0ZqXppF2KNW4W0C4mZtwhpFxIzbxHSLuSioZC/NwDzUp2kdI81MC/V
-        SUr3WAPzUj0bW6g3K9GzWVyYoKnP94fdaa+HQkDDmth+oEHSxfRVf3Wo2xfdNBbwwCtl4QDanKMDbGjX
-        m7p9fqs/7xB4tut+CAouGdCmHB3oV97sTk8iB2CNPtQ4kYJLBpjn6jhXarq59RE9hLsT1sg8V9cXTiRH
-        TCNcO9bt66QxB9bjnEVyTO2r74Q3flT9tazPgvW4bCI5qEs6Al6/zoe5IXtdHMAG1kYD6D+lc8J1GWCe
-        OgIbWBsdQSmpSzgF/e4SlpL6GKYIPoZrUPRFtAZFX8VrgQ31O5EKeFZvrsG55v8cV9U3j3JxoRqXvekA
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnAddStop.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddTicket.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAASdJREFUeF7t
         2LFtg1AARVE2oY+X8CbZL16CzexPlwKZREb4KjlHet2nQJeGPwEAAPAj89iys/UMJ7mM3Xf2McZJBIkR

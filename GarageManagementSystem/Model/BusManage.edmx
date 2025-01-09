@@ -94,8 +94,8 @@
           <Property Name="TicketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RouteID" Type="int" Nullable="false" />
           <Property Name="BusID" Type="int" Nullable="false" />
-          <Property Name="DepartureTime" Type="datetime" Nullable="false" />
           <Property Name="Fare" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ScheduleID" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -241,6 +241,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tickets_Schedules">
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="0..1" />
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedules">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BusManageModelStoreContainer">
           <EntitySet Name="BookedTickets" EntityType="Self.BookedTickets" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Buses" EntityType="Self.Buses" Schema="dbo" store:Type="Tables" />
@@ -295,6 +307,10 @@
           <AssociationSet Name="FK_Stop" Association="Self.FK_Stop">
             <End Role="BusStops" EntitySet="BusStops" />
             <End Role="ScheduleStops" EntitySet="ScheduleStops" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tickets_Schedules" Association="Self.FK_Tickets_Schedules">
+            <End Role="Schedules" EntitySet="Schedules" />
+            <End Role="Tickets" EntitySet="Tickets" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -378,6 +394,7 @@
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="BusRoute" Relationship="Self.FK__Schedules__Route__6FE99F9F" FromRole="Schedules" ToRole="BusRoutes" />
           <NavigationProperty Name="ScheduleStops" Relationship="Self.FK_Schedule" FromRole="Schedules" ToRole="ScheduleStops" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK_Tickets_Schedules" FromRole="Schedules" ToRole="Tickets" />
         </EntityType>
         <EntityType Name="ScheduleStop">
           <Key>
@@ -408,11 +425,12 @@
           <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RouteID" Type="Int32" Nullable="false" />
           <Property Name="BusID" Type="Int32" Nullable="false" />
-          <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Fare" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ScheduleID" Type="Int32" />
           <NavigationProperty Name="BookedTickets" Relationship="Self.FK__BookedTic__Ticke__5BE2A6F2" FromRole="Tickets" ToRole="BookedTickets" />
           <NavigationProperty Name="Bus" Relationship="Self.FK__Tickets__BusID__59063A47" FromRole="Tickets" ToRole="Buses" />
           <NavigationProperty Name="BusRoute" Relationship="Self.FK__Tickets__RouteID__5812160E" FromRole="Tickets" ToRole="BusRoutes" />
+          <NavigationProperty Name="Schedule" Relationship="Self.FK_Tickets_Schedules" FromRole="Tickets" ToRole="Schedules" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -560,6 +578,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Tickets_Schedules">
+          <End Role="Schedules" Type="Self.Schedule" Multiplicity="0..1" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedules">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="BusManageEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BookedTickets" EntityType="Self.BookedTicket" />
           <EntitySet Name="Buses" EntityType="Self.Bus" />
@@ -614,6 +644,10 @@
           <AssociationSet Name="FK_Schedule" Association="Self.FK_Schedule">
             <End Role="Schedules" EntitySet="Schedules" />
             <End Role="ScheduleStops" EntitySet="ScheduleStops" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tickets_Schedules" Association="Self.FK_Tickets_Schedules">
+            <End Role="Schedules" EntitySet="Schedules" />
+            <End Role="Tickets" EntitySet="Tickets" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -718,8 +752,8 @@
                 <ScalarProperty Name="TicketID" ColumnName="TicketID" />
                 <ScalarProperty Name="RouteID" ColumnName="RouteID" />
                 <ScalarProperty Name="BusID" ColumnName="BusID" />
-                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
                 <ScalarProperty Name="Fare" ColumnName="Fare" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

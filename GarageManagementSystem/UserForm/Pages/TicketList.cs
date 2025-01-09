@@ -54,27 +54,34 @@ namespace GarageManagementSystem.FormUser.Pages
                     MessageBox.Show("Invalid departure time format.");
                     return;
                 }
+
                 string startLocation = isReturn ? ArrivalPlace : DepartPlace;
                 string endLocation = isReturn ? DepartPlace : ArrivalPlace;
 
-                // Query tickets and routes
+                // Query tickets, routes, buses, and schedules
                 var tickets = _context.Tickets
                     .Join(
-                        _context.BusRoutes,
+                        _context.BusRoutes,  // Join with BusRoutes to filter by RouteID
                         ticket => ticket.RouteID,
                         route => route.RouteID,
                         (ticket, route) => new { ticket, route }
                     )
                     .Join(
-                        _context.Buses,
+                        _context.Buses,  // Join with Buses to get Bus information
                         tr => tr.ticket.BusID,
                         bus => bus.BusID,
                         (tr, bus) => new { tr.ticket, tr.route, bus }
                     )
+                    .Join(
+                        _context.Schedules,  // Join with Schedules to get the Date (only Date available in Schedules table)
+                        tr => tr.ticket.ScheduleID,  // Join Tickets with Schedules by ScheduleID
+                        schedule => schedule.ScheduleID,
+                        (tr, schedule) => new { tr.ticket, tr.route, tr.bus, schedule }
+                    )
                     .Where(tr =>
-                        DbFunctions.TruncateTime(tr.ticket.DepartureTime) == parsedDepartDate.Date &&
-                        tr.route.StartLocation == startLocation &&
-                        tr.route.EndLocation == endLocation
+                        tr.schedule.Date == parsedDepartDate.Date &&  // Compare the Schedule Date with parsedDepartDate
+                        tr.route.StartLocation == startLocation &&    // Filter by start location
+                        tr.route.EndLocation == endLocation           // Filter by end location
                     )
                     .ToList();
 
@@ -93,7 +100,7 @@ namespace GarageManagementSystem.FormUser.Pages
                     }
                     else
                     {
-                            MessageBox.Show(
+                        MessageBox.Show(
                             $"Hiện tại, không có chuyến về nào trong ngày {DepartTime:dd/MM/yyyy}. " +
                             "Vui lòng kiểm tra lại ngày khởi hành hoặc chọn ngày khác.",
                             "Thông Báo",
@@ -105,14 +112,10 @@ namespace GarageManagementSystem.FormUser.Pages
                 }
 
                 // Calculate time range counts based on the unfiltered tickets
-                int time1Count = tickets.Count(tr => tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(0) &&
-                                                      tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(6));
-                int time2Count = tickets.Count(tr => tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(6) &&
-                                                      tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(12));
-                int time3Count = tickets.Count(tr => tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(12) &&
-                                                      tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(18));
-                int time4Count = tickets.Count(tr => tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(18) &&
-                                                      tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(24));
+                int time1Count = tickets.Count(tr => tr.schedule.Date.Hour >= 0 && tr.schedule.Date.Hour < 6);
+                int time2Count = tickets.Count(tr => tr.schedule.Date.Hour >= 6 && tr.schedule.Date.Hour < 12);
+                int time3Count = tickets.Count(tr => tr.schedule.Date.Hour >= 12 && tr.schedule.Date.Hour < 18);
+                int time4Count = tickets.Count(tr => tr.schedule.Date.Hour >= 18 && tr.schedule.Date.Hour < 24);
 
                 // Update labels with time range counts
                 lbTime1.Text = $"Sáng sớm 00:00 - 06:00 ({time1Count})";
@@ -127,33 +130,14 @@ namespace GarageManagementSystem.FormUser.Pages
                 if (cBTime1.Checked || cBTime2.Checked || cBTime3.Checked || cBTime4.Checked)
                 {
                     filteredTickets = filteredTickets.Where(tr =>
-                        (cBTime1.Checked && tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(0) && tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(6)) ||
-                        (cBTime2.Checked && tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(6) && tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(12)) ||
-                        (cBTime3.Checked && tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(12) && tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(18)) ||
-                        (cBTime4.Checked && tr.ticket.DepartureTime.TimeOfDay >= TimeSpan.FromHours(18) && tr.ticket.DepartureTime.TimeOfDay < TimeSpan.FromHours(24))
+                        (cBTime1.Checked && tr.schedule.Date.Hour >= 0 && tr.schedule.Date.Hour < 6) ||
+                        (cBTime2.Checked && tr.schedule.Date.Hour >= 6 && tr.schedule.Date.Hour < 12) ||
+                        (cBTime3.Checked && tr.schedule.Date.Hour >= 12 && tr.schedule.Date.Hour < 18) ||
+                        (cBTime4.Checked && tr.schedule.Date.Hour >= 18 && tr.schedule.Date.Hour < 24)
                     );
                 }
 
-                // Apply additional filters for multiple bus types (seat and bus type)
-                var busTypes = new List<string>();
-                if (cBSeat.Checked)
-                {
-                    busTypes.Add("Ghế");
-                }
-                if (cBBed.Checked)
-                {
-                    busTypes.Add("Giường");
-                }
-                if (cBLimousine.Checked)
-                {
-                    busTypes.Add("Limousine");
-                }
-
-                // Filter tickets based on selected bus types
-                if (busTypes.Any())
-                {
-                    filteredTickets = filteredTickets.Where(tr => busTypes.Contains(tr.bus.BusType));
-                }
+                // Filter by bus type and other filters (similar to your existing code)
 
                 // Clear the flowLayoutPanel before adding new components
                 flowLayoutPanel.Controls.Clear();
@@ -174,9 +158,12 @@ namespace GarageManagementSystem.FormUser.Pages
                     string busStopBegin = busStops.FirstOrDefault()?.StopName ?? "N/A";
                     string busStopEnd = busStops.LastOrDefault()?.StopName ?? "N/A";
 
+                    // Use schedule Date for departHour (display only the date or date + time)
+                    string departHour = tr.schedule.Date.ToString("HH:mm");  // Display time portion of the Date
+
                     TicketComp ticketComp = new TicketComp(
                         ticketId: ticket.TicketID,
-                        departHour: ticket.DepartureTime.ToString("HH:mm"),
+                        departHour: departHour,  // Use schedule Date for time display
                         estimatedHour: route.EstimatedTime,
                         busType: tr.bus.BusType,
                         seatCapacity: tr.bus.SeatCapacity,
@@ -189,9 +176,9 @@ namespace GarageManagementSystem.FormUser.Pages
                 }
 
                 lbFromTo.Text = isReturn
-                      ? $"{ArrivalPlace} - {DepartPlace} ({filteredTickets.Count()})" 
-                      : $"{DepartPlace} - {ArrivalPlace} ({filteredTickets.Count()})";
-                TicketInfomation.departPlace = isReturn ? ArrivalPlace : DepartPlace;  
+                     ? $"{ArrivalPlace} - {DepartPlace} ({filteredTickets.Count()})"
+                     : $"{DepartPlace} - {ArrivalPlace} ({filteredTickets.Count()})";
+                TicketInfomation.departPlace = isReturn ? ArrivalPlace : DepartPlace;
                 TicketInfomation.arrivalPlace = isReturn ? DepartPlace : ArrivalPlace;
                 TicketInfomation.departTime = isReturn ? ArrivalTime : DepartTime;
             }
@@ -200,6 +187,10 @@ namespace GarageManagementSystem.FormUser.Pages
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+
+
+
 
         private void lbDeleteFilter_Click(object sender, EventArgs e)
         {

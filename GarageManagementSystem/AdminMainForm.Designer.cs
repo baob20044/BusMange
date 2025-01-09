@@ -35,20 +35,18 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnSchedule = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBusStop = new Guna.UI2.WinForms.Guna2Button();
             this.btnTicket = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBooking = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRoute = new Guna.UI2.WinForms.Guna2Button();
             this.btnBus = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -121,14 +119,12 @@
             this.panel1.Controls.Add(this.btnCustomer);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnSchedule);
-            this.panel1.Controls.Add(this.btnBusStop);
             this.panel1.Controls.Add(this.lbUsername);
             this.panel1.Controls.Add(this.btnTicket);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbLogOut);
             this.panel1.Controls.Add(this.btnBooking);
-            this.panel1.Controls.Add(this.btnRoute);
             this.panel1.Controls.Add(this.btnBus);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.panel3);
@@ -136,30 +132,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(223, 803);
             this.panel1.TabIndex = 20;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(22, 138);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(175, 1);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(220, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1263, 803);
-            this.panel3.TabIndex = 19;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.mainPanel.Location = new System.Drawing.Point(223, -1);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1260, 803);
-            this.mainPanel.TabIndex = 24;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // btnStaff
             // 
@@ -237,25 +209,6 @@
             this.btnSchedule.Text = "Schedule";
             this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
-            // btnBusStop
-            // 
-            this.btnBusStop.CheckedState.Parent = this.btnBusStop;
-            this.btnBusStop.CustomImages.Parent = this.btnBusStop;
-            this.btnBusStop.FillColor = System.Drawing.Color.Transparent;
-            this.btnBusStop.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusStop.ForeColor = System.Drawing.Color.White;
-            this.btnBusStop.HoverState.Parent = this.btnBusStop;
-            this.btnBusStop.Image = ((System.Drawing.Image)(resources.GetObject("btnBusStop.Image")));
-            this.btnBusStop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBusStop.Location = new System.Drawing.Point(21, 363);
-            this.btnBusStop.Name = "btnBusStop";
-            this.btnBusStop.PressedColor = System.Drawing.Color.Navy;
-            this.btnBusStop.ShadowDecoration.Parent = this.btnBusStop;
-            this.btnBusStop.Size = new System.Drawing.Size(181, 45);
-            this.btnBusStop.TabIndex = 26;
-            this.btnBusStop.Text = "BusStop";
-            this.btnBusStop.Click += new System.EventHandler(this.btnBusStop_Click);
-            // 
             // btnTicket
             // 
             this.btnTicket.CheckedState.Parent = this.btnTicket;
@@ -274,6 +227,14 @@
             this.btnTicket.TabIndex = 25;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(22, 138);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(175, 1);
+            this.panel2.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -303,25 +264,6 @@
             this.btnBooking.TabIndex = 20;
             this.btnBooking.Text = "Booking";
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
-            // 
-            // btnRoute
-            // 
-            this.btnRoute.CheckedState.Parent = this.btnRoute;
-            this.btnRoute.CustomImages.Parent = this.btnRoute;
-            this.btnRoute.FillColor = System.Drawing.Color.Transparent;
-            this.btnRoute.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoute.ForeColor = System.Drawing.Color.White;
-            this.btnRoute.HoverState.Parent = this.btnRoute;
-            this.btnRoute.Image = ((System.Drawing.Image)(resources.GetObject("btnRoute.Image")));
-            this.btnRoute.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRoute.Location = new System.Drawing.Point(20, 309);
-            this.btnRoute.Name = "btnRoute";
-            this.btnRoute.PressedColor = System.Drawing.Color.Navy;
-            this.btnRoute.ShadowDecoration.Parent = this.btnRoute;
-            this.btnRoute.Size = new System.Drawing.Size(181, 45);
-            this.btnRoute.TabIndex = 18;
-            this.btnRoute.Text = "Route";
-            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
             // 
             // btnBus
             // 
@@ -361,6 +303,22 @@
             this.btnHome.Text = "Home";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(220, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1263, 803);
+            this.panel3.TabIndex = 19;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.mainPanel.Location = new System.Drawing.Point(223, -1);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1260, 803);
+            this.mainPanel.TabIndex = 24;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -394,14 +352,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnBooking;
-        private Guna.UI2.WinForms.Guna2Button btnRoute;
         private Guna.UI2.WinForms.Guna2Button btnBus;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel mainPanel;
         private Guna.UI2.WinForms.Guna2Button btnOrder;
         private Guna.UI2.WinForms.Guna2Button btnSchedule;
-        private Guna.UI2.WinForms.Guna2Button btnBusStop;
         private Guna.UI2.WinForms.Guna2Button btnStaff;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
     }

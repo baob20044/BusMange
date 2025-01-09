@@ -82,6 +82,7 @@ namespace GarageManagementSystem
 
         private void lbLogOut_Click(object sender, EventArgs e)
         {
+            UserSession.ClearSession();
             NavigateToLoginForm();
         }
         private void NavigateToLoginForm()

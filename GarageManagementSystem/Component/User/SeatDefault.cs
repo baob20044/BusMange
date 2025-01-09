@@ -29,6 +29,7 @@ namespace GarageManagementSystem.Component
             Fare = fare;
             LoadBookedTickets(ticketId);
             TicketId = ticketId;
+            TicketHelper.PricePerTicket = Fare;
         }
         private void LoadBookedTickets(int ticketId)
         {

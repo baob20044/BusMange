@@ -19,6 +19,7 @@ namespace GarageManagementSystem.Model
         public Schedule()
         {
             this.ScheduleStops = new HashSet<ScheduleStop>();
+            this.Tickets = new HashSet<Ticket>();
         }
         [Key]
         public int ScheduleID { get; set; }
@@ -28,5 +29,7 @@ namespace GarageManagementSystem.Model
         public virtual BusRoute BusRoute { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ScheduleStop> ScheduleStops { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

@@ -26,7 +26,6 @@
           </Key>
           <Property Name="BusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BusNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RouteID" Type="int" Nullable="false" />
           <Property Name="SeatCapacity" Type="int" Nullable="false" />
           <Property Name="BusType" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -92,7 +91,6 @@
             <PropertyRef Name="TicketID" />
           </Key>
           <Property Name="TicketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RouteID" Type="int" Nullable="false" />
           <Property Name="BusID" Type="int" Nullable="false" />
           <Property Name="Fare" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ScheduleID" Type="int" />
@@ -130,18 +128,6 @@
             </Principal>
             <Dependent Role="BookedTickets">
               <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Buses__RouteID__4F7CD00D">
-          <End Role="BusRoutes" Type="Self.BusRoutes" Multiplicity="1" />
-          <End Role="Buses" Type="Self.Buses" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BusRoutes">
-              <PropertyRef Name="RouteID" />
-            </Principal>
-            <Dependent Role="Buses">
-              <PropertyRef Name="RouteID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -205,18 +191,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tickets__RouteID__5812160E">
-          <End Role="BusRoutes" Type="Self.BusRoutes" Multiplicity="1" />
-          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BusRoutes">
-              <PropertyRef Name="RouteID" />
-            </Principal>
-            <Dependent Role="Tickets">
-              <PropertyRef Name="RouteID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Schedule">
           <End Role="Schedules" Type="Self.Schedules" Multiplicity="1" />
           <End Role="ScheduleStops" Type="Self.ScheduleStops" Multiplicity="*" />
@@ -272,10 +246,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="BookedTickets" EntitySet="BookedTickets" />
           </AssociationSet>
-          <AssociationSet Name="FK__Buses__RouteID__4F7CD00D" Association="Self.FK__Buses__RouteID__4F7CD00D">
-            <End Role="BusRoutes" EntitySet="BusRoutes" />
-            <End Role="Buses" EntitySet="Buses" />
-          </AssociationSet>
           <AssociationSet Name="FK__BusStops__RouteI__52593CB8" Association="Self.FK__BusStops__RouteI__52593CB8">
             <End Role="BusRoutes" EntitySet="BusRoutes" />
             <End Role="BusStops" EntitySet="BusStops" />
@@ -294,10 +264,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__Tickets__BusID__59063A47" Association="Self.FK__Tickets__BusID__59063A47">
             <End Role="Buses" EntitySet="Buses" />
-            <End Role="Tickets" EntitySet="Tickets" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tickets__RouteID__5812160E" Association="Self.FK__Tickets__RouteID__5812160E">
-            <End Role="BusRoutes" EntitySet="BusRoutes" />
             <End Role="Tickets" EntitySet="Tickets" />
           </AssociationSet>
           <AssociationSet Name="FK_Schedule" Association="Self.FK_Schedule">
@@ -341,10 +307,8 @@
           </Key>
           <Property Name="BusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BusNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="RouteID" Type="Int32" Nullable="false" />
           <Property Name="SeatCapacity" Type="Int32" Nullable="false" />
           <Property Name="BusType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="BusRoute" Relationship="Self.FK__Buses__RouteID__4F7CD00D" FromRole="Buses" ToRole="BusRoutes" />
           <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__AssignedB__5535A963" FromRole="Buses" ToRole="Staff" />
           <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__BusID__59063A47" FromRole="Buses" ToRole="Tickets" />
         </EntityType>
@@ -357,10 +321,8 @@
           <Property Name="EndLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TotalDistance" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="EstimatedTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Buses" Relationship="Self.FK__Buses__RouteID__4F7CD00D" FromRole="BusRoutes" ToRole="Buses" />
           <NavigationProperty Name="BusStops" Relationship="Self.FK__BusStops__RouteI__52593CB8" FromRole="BusRoutes" ToRole="BusStops" />
           <NavigationProperty Name="Schedules" Relationship="Self.FK__Schedules__Route__6FE99F9F" FromRole="BusRoutes" ToRole="Schedules" />
-          <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__RouteID__5812160E" FromRole="BusRoutes" ToRole="Tickets" />
         </EntityType>
         <EntityType Name="BusStop">
           <Key>
@@ -423,13 +385,11 @@
             <PropertyRef Name="TicketID" />
           </Key>
           <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RouteID" Type="Int32" Nullable="false" />
           <Property Name="BusID" Type="Int32" Nullable="false" />
           <Property Name="Fare" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="ScheduleID" Type="Int32" />
           <NavigationProperty Name="BookedTickets" Relationship="Self.FK__BookedTic__Ticke__5BE2A6F2" FromRole="Tickets" ToRole="BookedTickets" />
           <NavigationProperty Name="Bus" Relationship="Self.FK__Tickets__BusID__59063A47" FromRole="Tickets" ToRole="Buses" />
-          <NavigationProperty Name="BusRoute" Relationship="Self.FK__Tickets__RouteID__5812160E" FromRole="Tickets" ToRole="BusRoutes" />
           <NavigationProperty Name="Schedule" Relationship="Self.FK_Tickets_Schedules" FromRole="Tickets" ToRole="Schedules" />
         </EntityType>
         <EntityType Name="User">
@@ -467,18 +427,6 @@
             </Principal>
             <Dependent Role="BookedTickets">
               <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Buses__RouteID__4F7CD00D">
-          <End Role="BusRoutes" Type="Self.BusRoute" Multiplicity="1" />
-          <End Role="Buses" Type="Self.Bus" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BusRoutes">
-              <PropertyRef Name="RouteID" />
-            </Principal>
-            <Dependent Role="Buses">
-              <PropertyRef Name="RouteID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -526,18 +474,6 @@
               <PropertyRef Name="RouteID" />
             </Principal>
             <Dependent Role="Schedules">
-              <PropertyRef Name="RouteID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tickets__RouteID__5812160E">
-          <End Role="BusRoutes" Type="Self.BusRoute" Multiplicity="1" />
-          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BusRoutes">
-              <PropertyRef Name="RouteID" />
-            </Principal>
-            <Dependent Role="Tickets">
               <PropertyRef Name="RouteID" />
             </Dependent>
           </ReferentialConstraint>
@@ -609,10 +545,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="BookedTickets" EntitySet="BookedTickets" />
           </AssociationSet>
-          <AssociationSet Name="FK__Buses__RouteID__4F7CD00D" Association="Self.FK__Buses__RouteID__4F7CD00D">
-            <End Role="BusRoutes" EntitySet="BusRoutes" />
-            <End Role="Buses" EntitySet="Buses" />
-          </AssociationSet>
           <AssociationSet Name="FK__Staff__AssignedB__5535A963" Association="Self.FK__Staff__AssignedB__5535A963">
             <End Role="Buses" EntitySet="Buses" />
             <End Role="Staff" EntitySet="Staffs" />
@@ -628,10 +560,6 @@
           <AssociationSet Name="FK__Schedules__Route__6FE99F9F" Association="Self.FK__Schedules__Route__6FE99F9F">
             <End Role="BusRoutes" EntitySet="BusRoutes" />
             <End Role="Schedules" EntitySet="Schedules" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tickets__RouteID__5812160E" Association="Self.FK__Tickets__RouteID__5812160E">
-            <End Role="BusRoutes" EntitySet="BusRoutes" />
-            <End Role="Tickets" EntitySet="Tickets" />
           </AssociationSet>
           <AssociationSet Name="FK_Stop" Association="Self.FK_Stop">
             <End Role="BusStops" EntitySet="BusStops" />
@@ -677,7 +605,6 @@
               <MappingFragment StoreEntitySet="Buses">
                 <ScalarProperty Name="BusID" ColumnName="BusID" />
                 <ScalarProperty Name="BusNumber" ColumnName="BusNumber" />
-                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
                 <ScalarProperty Name="SeatCapacity" ColumnName="SeatCapacity" />
                 <ScalarProperty Name="BusType" ColumnName="BusType" />
               </MappingFragment>
@@ -750,7 +677,6 @@
             <EntityTypeMapping TypeName="BusManageModel.Ticket">
               <MappingFragment StoreEntitySet="Tickets">
                 <ScalarProperty Name="TicketID" ColumnName="TicketID" />
-                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
                 <ScalarProperty Name="BusID" ColumnName="BusID" />
                 <ScalarProperty Name="Fare" ColumnName="Fare" />
                 <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />

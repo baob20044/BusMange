@@ -24,11 +24,9 @@ namespace GarageManagementSystem.Model
         [Key]
         public int BusID { get; set; }
         public string BusNumber { get; set; }
-        public int RouteID { get; set; }
         public int SeatCapacity { get; set; }
         public string BusType { get; set; }
     
-        public virtual BusRoute BusRoute { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff> Staffs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -22,23 +22,35 @@ namespace GarageManagementSystem.Component.Admin.AdminTicket
             using (_context = new BusManageContext())
             {
                 // Fetch the ticket record by TicketID
-                var ticket = _context.Tickets.Where(s => s.TicketID == ticketID).FirstOrDefault();
+                var ticket = _context.Tickets
+                    .Where(s => s.TicketID == ticketID)
+                    .FirstOrDefault();
 
                 if (ticket != null)
                 {
                     // Get BusType from Buses table
-                    var bus = _context.Buses.Where(b => b.BusID == ticket.BusID).FirstOrDefault();
+                    var bus = _context.Buses
+                        .Where(b => b.BusID == ticket.BusID)
+                        .FirstOrDefault();
                     lbBusType.Text = bus != null ? bus.BusType : "N/A";
 
                     // Get Fare from Tickets table
                     lbPrice.Text = ticket.Fare.ToString();
 
                     // Get Date from Schedules table
-                    var schedule = _context.Schedules.Where(sch => sch.ScheduleID == ticket.ScheduleID).FirstOrDefault();
+                    var schedule = _context.Schedules
+                        .Where(sch => sch.ScheduleID == ticket.ScheduleID)
+                        .FirstOrDefault();
                     lbDate.Text = schedule != null ? schedule.Date.ToString("dd/MM/yyyy") : "N/A";
 
-                    // Get RouteName from BusRoutes table
-                    var route = _context.BusRoutes.Where(r => r.RouteID == ticket.RouteID).FirstOrDefault();
+                    // Get RouteID from Schedules table (instead of from Ticket)
+                    var routeID = schedule?.RouteID;
+
+                    // Get RouteName from BusRoutes table using RouteID from Schedules
+                    var route = _context.BusRoutes
+                        .Where(r => r.RouteID == routeID)
+                        .FirstOrDefault();
+
                     if (route != null)
                     {
                         lbRouteName.Text = $"{route.StartLocation} - {route.EndLocation}";
@@ -58,6 +70,7 @@ namespace GarageManagementSystem.Component.Admin.AdminTicket
                 }
             }
         }
+
 
         private void AdminTicketComp_Load(object sender, EventArgs e)
         {

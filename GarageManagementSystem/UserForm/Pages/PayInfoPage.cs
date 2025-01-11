@@ -45,12 +45,18 @@ namespace GarageManagementSystem.FormUser.Pages
 
             using (_context = new BusManageContext())
             {
-                var RouteId = _context.Tickets.Where(s => s.TicketID == TicketHelper.ticketId).FirstOrDefault()?.RouteID;
+                var ticket = _context.Tickets
+                  .Where(s => s.TicketID == TicketHelper.ticketId)
+                  .FirstOrDefault();
+                var routeId = _context.Schedules
+                .Where(s => s.ScheduleID == ticket.ScheduleID) // Use the ScheduleID from the ticket
+                .Select(s => s.RouteID) // Get the RouteID
+                .FirstOrDefault(); // Get the first (or only) match
                 string dateToSchedule = StopBySchedule.date;
                 if (DateTime.TryParse(dateToSchedule, out DateTime scheduleDate))
                 {
                     var scheduleId = _context.Schedules
-                        .Where(s => s.RouteID == RouteId && s.Date == scheduleDate)
+                        .Where(s => s.RouteID == routeId && s.Date == scheduleDate)
                         .Select(s => s.ScheduleID)
                         .FirstOrDefault();
                     StopBySchedule.scheduleid = scheduleId;

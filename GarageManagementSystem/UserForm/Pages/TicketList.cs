@@ -58,25 +58,25 @@ namespace GarageManagementSystem.FormUser.Pages
                 string startLocation = isReturn ? ArrivalPlace : DepartPlace;
                 string endLocation = isReturn ? DepartPlace : ArrivalPlace;
 
-                // Query tickets, routes, buses, and schedules
+                // Query tickets, routes, buses, and schedules using RouteID from Schedules table
                 var tickets = _context.Tickets
                     .Join(
-                        _context.BusRoutes,  // Join with BusRoutes to filter by RouteID
-                        ticket => ticket.RouteID,
+                        _context.Schedules,  // Join with Schedules to filter by ScheduleID
+                        ticket => ticket.ScheduleID,
+                        schedule => schedule.ScheduleID,
+                        (ticket, schedule) => new { ticket, schedule }
+                    )
+                    .Join(
+                        _context.BusRoutes,  // Join with BusRoutes to get Route information
+                        ts => ts.schedule.RouteID,
                         route => route.RouteID,
-                        (ticket, route) => new { ticket, route }
+                        (ts, route) => new { ts.ticket, ts.schedule, route }
                     )
                     .Join(
                         _context.Buses,  // Join with Buses to get Bus information
                         tr => tr.ticket.BusID,
                         bus => bus.BusID,
-                        (tr, bus) => new { tr.ticket, tr.route, bus }
-                    )
-                    .Join(
-                        _context.Schedules,  // Join with Schedules to get the Date (only Date available in Schedules table)
-                        tr => tr.ticket.ScheduleID,  // Join Tickets with Schedules by ScheduleID
-                        schedule => schedule.ScheduleID,
-                        (tr, schedule) => new { tr.ticket, tr.route, tr.bus, schedule }
+                        (tr, bus) => new { tr.ticket, tr.schedule, tr.route, bus }
                     )
                     .Where(tr =>
                         tr.schedule.Date == parsedDepartDate.Date &&  // Compare the Schedule Date with parsedDepartDate
@@ -111,11 +111,46 @@ namespace GarageManagementSystem.FormUser.Pages
                     return;
                 }
 
-                // Calculate time range counts based on the unfiltered tickets
-                int time1Count = tickets.Count(tr => tr.schedule.Date.Hour >= 0 && tr.schedule.Date.Hour < 6);
-                int time2Count = tickets.Count(tr => tr.schedule.Date.Hour >= 6 && tr.schedule.Date.Hour < 12);
-                int time3Count = tickets.Count(tr => tr.schedule.Date.Hour >= 12 && tr.schedule.Date.Hour < 18);
-                int time4Count = tickets.Count(tr => tr.schedule.Date.Hour >= 18 && tr.schedule.Date.Hour < 24);
+                int time1Count = tickets.Count(tr =>
+                {
+                    var arrivalTime = _context.ScheduleStops
+                        .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                        .OrderBy(ss => ss.ScheduleStopID)
+                        .Select(ss => ss.ArrivalTime)
+                        .FirstOrDefault();
+
+                    return arrivalTime.Hour >= 0 && arrivalTime.Hour < 6;
+                });
+                int time2Count = tickets.Count(tr =>
+                {
+                    var arrivalTime = _context.ScheduleStops
+                        .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                        .OrderBy(ss => ss.ScheduleStopID)
+                        .Select(ss => ss.ArrivalTime)
+                        .FirstOrDefault();
+
+                    return arrivalTime.Hour >= 6 && arrivalTime.Hour < 12;
+                });
+                int time3Count = tickets.Count(tr =>
+                {
+                    var arrivalTime = _context.ScheduleStops
+                        .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                        .OrderBy(ss => ss.ScheduleStopID)
+                        .Select(ss => ss.ArrivalTime)
+                        .FirstOrDefault();
+
+                    return arrivalTime.Hour >= 12 && arrivalTime.Hour < 18;
+                });
+                int time4Count = tickets.Count(tr =>
+                {
+                    var arrivalTime = _context.ScheduleStops
+                        .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                        .OrderBy(ss => ss.ScheduleStopID)
+                        .Select(ss => ss.ArrivalTime)
+                        .FirstOrDefault();
+
+                    return arrivalTime.Hour >= 18 && arrivalTime.Hour < 24;
+                });
 
                 // Update labels with time range counts
                 lbTime1.Text = $"Sáng sớm 00:00 - 06:00 ({time1Count})";
@@ -130,14 +165,28 @@ namespace GarageManagementSystem.FormUser.Pages
                 if (cBTime1.Checked || cBTime2.Checked || cBTime3.Checked || cBTime4.Checked)
                 {
                     filteredTickets = filteredTickets.Where(tr =>
-                        (cBTime1.Checked && tr.schedule.Date.Hour >= 0 && tr.schedule.Date.Hour < 6) ||
-                        (cBTime2.Checked && tr.schedule.Date.Hour >= 6 && tr.schedule.Date.Hour < 12) ||
-                        (cBTime3.Checked && tr.schedule.Date.Hour >= 12 && tr.schedule.Date.Hour < 18) ||
-                        (cBTime4.Checked && tr.schedule.Date.Hour >= 18 && tr.schedule.Date.Hour < 24)
+                        (cBTime1.Checked && _context.ScheduleStops
+                            .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour >= 0 &&
+                            _context.ScheduleStops.Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour < 6) ||
+                        (cBTime2.Checked && _context.ScheduleStops
+                            .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour >= 6 &&
+                            _context.ScheduleStops.Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour < 12) ||
+                        (cBTime3.Checked && _context.ScheduleStops
+                            .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour >= 12 &&
+                            _context.ScheduleStops.Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour < 18) ||
+                        (cBTime4.Checked && _context.ScheduleStops
+                            .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour >= 18 &&
+                            _context.ScheduleStops.Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                            .Select(ss => ss.ArrivalTime).FirstOrDefault().Hour < 24)
                     );
                 }
-
-                // Filter by bus type and other filters (similar to your existing code)
 
                 // Clear the flowLayoutPanel before adding new components
                 flowLayoutPanel.Controls.Clear();
@@ -158,12 +207,19 @@ namespace GarageManagementSystem.FormUser.Pages
                     string busStopBegin = busStops.FirstOrDefault()?.StopName ?? "N/A";
                     string busStopEnd = busStops.LastOrDefault()?.StopName ?? "N/A";
 
-                    // Use schedule Date for departHour (display only the date or date + time)
-                    string departHour = tr.schedule.Date.ToString("HH:mm");  // Display time portion of the Date
+                    // Fetch ArrivalTime from ScheduleStops based on ScheduleID
+                    var arrivalTime = _context.ScheduleStops
+                        .Where(ss => ss.ScheduleID == tr.schedule.ScheduleID)
+                        .OrderBy(ss => ss.ScheduleStopID)
+                        .Select(ss => ss.ArrivalTime)
+                        .FirstOrDefault();
+
+                    // Use the ArrivalTime from ScheduleStops for departHour
+                    string departHour = arrivalTime.ToString("HH:mm");  // Display time portion
 
                     TicketComp ticketComp = new TicketComp(
                         ticketId: ticket.TicketID,
-                        departHour: departHour,  // Use schedule Date for time display
+                        departHour: departHour,  // Use ArrivalTime for time display
                         estimatedHour: route.EstimatedTime,
                         busType: tr.bus.BusType,
                         seatCapacity: tr.bus.SeatCapacity,
@@ -187,6 +243,9 @@ namespace GarageManagementSystem.FormUser.Pages
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+
+
 
 
 

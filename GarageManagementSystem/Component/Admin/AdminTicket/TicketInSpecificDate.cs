@@ -23,8 +23,8 @@ namespace GarageManagementSystem.Component.Admin.AdminTicket
                 // Fetch the ticket with its related schedule and bus route details
                 var ticketDetails = (from ticket in _context.Tickets
                                      join schedule in _context.Schedules on ticket.ScheduleID equals schedule.ScheduleID
-                                     join busRoute in _context.BusRoutes on ticket.RouteID equals busRoute.RouteID
-                                     join bus in _context.Buses on ticket.RouteID equals bus.RouteID
+                                     join busRoute in _context.BusRoutes on schedule.RouteID equals busRoute.RouteID
+                                     join bus in _context.Buses on ticket.BusID equals bus.BusID
                                      where ticket.TicketID == ticketID
                                      select new
                                      {

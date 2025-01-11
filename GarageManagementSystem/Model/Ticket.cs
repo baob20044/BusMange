@@ -22,7 +22,6 @@ namespace GarageManagementSystem.Model
         }
         [Key]
         public int TicketID { get; set; }
-        public int RouteID { get; set; }
         public int BusID { get; set; }
         public decimal Fare { get; set; }
         public Nullable<int> ScheduleID { get; set; }
@@ -30,7 +29,6 @@ namespace GarageManagementSystem.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookedTicket> BookedTickets { get; set; }
         public virtual Bus Bus { get; set; }
-        public virtual BusRoute BusRoute { get; set; }
         public virtual Schedule Schedule { get; set; }
     }
 }

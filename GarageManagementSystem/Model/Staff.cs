@@ -12,6 +12,7 @@ namespace GarageManagementSystem.Model
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class Staff
     {
@@ -21,7 +22,7 @@ namespace GarageManagementSystem.Model
         public string Role { get; set; }
         public string PhoneNumber { get; set; }
         public Nullable<int> AssignedBusID { get; set; }
-    
+
         public virtual Bus Bus { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace GarageManagementSystem.Model
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<BookedTicket> BookedTickets { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<ScheduleStop> ScheduleStops { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -49,6 +49,14 @@ namespace GarageManagementSystem.Model
 
             // Rename Order table to match database schema
             modelBuilder.Entity<Order>().ToTable("Order");
+
+            modelBuilder.Entity<Staff>()
+                .HasRequired(s => s.Bus) // Required navigation property
+                .WithMany() // One bus can have many staff members
+                .HasForeignKey(s => s.AssignedBusID) // Specify the foreign key
+                .WillCascadeOnDelete(false); // Optional: prevent cascade delete
+
+
 
             base.OnModelCreating(modelBuilder);
         }

@@ -42,28 +42,22 @@ namespace GarageManagementSystem.FormUser.Pages
                         .OrderByDescending(s => s.BookingID)
                         .ToList();
 
-                    // Filter the tickets by the selected date, comparing the DepartTime
+                    // Filter the tickets by the selected date
                     var filteredTickets = bookedTickets.Where(bookedTicket =>
                     {
-                        // Get ticket details
-                        var ticket = _context.Tickets.FirstOrDefault(t => t.TicketID == bookedTicket.TicketID);
+                        // Get ticket details and the associated schedule
+                        var ticket = _context.Tickets
+                            .Join(_context.Schedules,
+                                  t => t.ScheduleID,
+                                  s => s.ScheduleID,
+                                  (t, s) => new { t, s.RouteID, s.Date }) // Join Tickets with Schedules to get RouteID and Date
+                            .Where(ts => ts.t.TicketID == bookedTicket.TicketID)
+                            .FirstOrDefault();
+
                         if (ticket == null) return false;
 
-                        // Get route details
-                        var route = _context.BusRoutes.FirstOrDefault(r => r.RouteID == ticket.RouteID);
-                        if (route == null) return false;
-
-                        // Get the departure time from the Tickets table (the date only)
-                        var departTime = _context.Tickets
-                                                  .Where(t => t.TicketID == bookedTicket.TicketID)
-                                                  .Join(_context.Schedules,
-                                                        t => t.ScheduleID,
-                                                        s => s.ScheduleID,
-                                                        (t, s) => s.Date)  // Assuming `Date` represents the departure time
-                                                  .FirstOrDefault();
-
-                        // Filter based on the selected date (ignoring time)
-                        return departTime.Date == selectedDate.Date;
+                        // Check if the ticket departure date matches the selected date
+                        return ticket.Date.Date == selectedDate.Date;
                     }).ToList();
 
                     // Clear existing controls in the flowLayoutPanel
@@ -77,14 +71,23 @@ namespace GarageManagementSystem.FormUser.Pages
                         string tookPlace = bookedTicket.TookPlace;
 
                         // Get ticket details
+                        // Get ticket details
                         var ticket = _context.Tickets.FirstOrDefault(t => t.TicketID == bookedTicket.TicketID);
                         if (ticket == null) continue;
 
-                        string fare = $"{ticket.Fare:N0}";
+                        // Get the RouteID from the Schedules table using the ScheduleID from the ticket
+                        var schedule = _context.Schedules
+                            .Where(s => s.ScheduleID == ticket.ScheduleID)  // Using ScheduleID from the ticket
+                            .FirstOrDefault();
 
-                        // Get route details
-                        var route = _context.BusRoutes.FirstOrDefault(r => r.RouteID == ticket.RouteID);
+                        if (schedule == null) continue;
+
+                        // Now you have the RouteID from the Schedule
+                        var route = _context.BusRoutes.FirstOrDefault(r => r.RouteID == schedule.RouteID);
                         if (route == null) continue;
+
+                        // Continue with the rest of your logic...
+
 
                         // Query ScheduleStops and BusStops to find matches with TookPlace and the departure date
                         var busStops = _context.BusStops
@@ -122,30 +125,14 @@ namespace GarageManagementSystem.FormUser.Pages
                         var matchedArrivalTime = busStops
                             .FirstOrDefault(bs => bs.StopName == tookPlace && bs.Date.Date == selectedDate.Date)?.ArrivalTime;
 
-                        string arrivalTimeStr = string.Empty;
-                        if (matchedArrivalTime.HasValue)
-                        {
-                            try
-                            {
-                                // Format the ArrivalTime to "yyyy-MM-dd HH:mm:ss"
-                                arrivalTimeStr = matchedArrivalTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
-                            }
-                            catch (FormatException ex)
-                            {
-                                // Handle formatting error
-                                arrivalTimeStr = "Invalid Date";
-                                Console.WriteLine($"Error formatting ArrivalTime: {ex.Message}");
-                            }
-                        }
-                        else
-                        {
-                            arrivalTimeStr = "N/A"; // Handle null values
-                        }
+                        string arrivalTimeStr = matchedArrivalTime.HasValue
+                            ? matchedArrivalTime.Value.ToString("yyyy-MM-dd HH:mm:ss")
+                            : "N/A";
 
                         // Get stop details for "tookPlace"
                         var stopDetails = _context.BusStops.FirstOrDefault(bs => bs.StopName == tookPlace);
                         string address = stopDetails?.StopAddress ?? "";
-
+                        string fare = $"{ticket.Fare:N0}";
                         // Create a PhysicalTicket instance and add it to the flowLayoutPanel
                         PhysicalTicket physicalTicket = new PhysicalTicket(bookedTicketId, seatNumber, tookPlace, busStopBegin, busStopLast, arrivalTimeStr, address, fare);
                         flowLayoutPanel.Controls.Add(physicalTicket);
@@ -157,6 +144,7 @@ namespace GarageManagementSystem.FormUser.Pages
                 Console.Write(e.Message);
             }
         }
+
 
 
         // Call LoadTicketHistory initially to load tickets

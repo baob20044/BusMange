@@ -21,7 +21,7 @@ namespace GarageManagementSystem.Component.Admin.AdminTicket
         {
             InitializeComponent();
         }
-        private void TicketAdd_Load(object sender, EventArgs e)
+        public void TicketAdd_Load(object sender, EventArgs e)
         {
             using (_context = new BusManageContext())
             {
@@ -46,6 +46,28 @@ namespace GarageManagementSystem.Component.Admin.AdminTicket
             this.Parent.Controls.Remove(this);
         }
 
+        private void TicketAdd_TicketAdded()
+        {
+            flowLayoutPanel.Controls.Clear();
+            // This method will be invoked when the TicketAdded event is triggered
+            using (_context = new BusManageContext())
+            {
+                var tickets = (from ticket in _context.Tickets
+                               join schedule in _context.Schedules
+                               on ticket.ScheduleID equals schedule.ScheduleID
+                               where DbFunctions.TruncateTime(schedule.Date) == datepicker1.Value.Date
+                               select new
+                               {
+                                   ticket.TicketID
+                               }).ToList();
+
+                foreach (var ticket in tickets)
+                {
+                    TicketInSpecificDate ticketInSpecificDate = new TicketInSpecificDate(ticket.TicketID);
+                    flowLayoutPanel.Controls.Add(ticketInSpecificDate);
+                }
+            }
+        }
         private void datepicker1_ValueChanged(object sender, EventArgs e)
         {
             flowLayoutPanel.Controls.Clear();
@@ -58,7 +80,8 @@ namespace GarageManagementSystem.Component.Admin.AdminTicket
 
             if (existing == null)
             {
-                var add = new TicketAddAccordingDate(); // Pass ScheduleID here
+                var add = new TicketAddAccordingDate(datepicker1.Value.ToString()); // Pass ScheduleID here
+                add.ScheduleStopAdded += TicketAdd_TicketAdded;
                 this.Parent.Controls.Add(add);
                 add.Dock = DockStyle.None;
 

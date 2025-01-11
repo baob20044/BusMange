@@ -91,7 +91,7 @@ namespace GarageManagementSystem.FormUser.Pages
             {
                 pbQrIcon.Image = System.Drawing.Image.FromFile(@"D:\Code\Bài tập cô Miên\GarageManagementSystem\GarageManagementSystem\Resources\momo.png");
             }
-            else if(cbFuta.Checked == true)
+            else if (cbFuta.Checked == true)
             {
                 pbQrIcon.Image = System.Drawing.Image.FromFile(@"D:\Code\Bài tập cô Miên\GarageManagementSystem\GarageManagementSystem\Resources\futapay.png");
             }
@@ -168,7 +168,7 @@ namespace GarageManagementSystem.FormUser.Pages
                         {
                             var booking = _context.BookedTickets
                                 .FirstOrDefault(b => b.TicketID == ticketId && b.SeatNumber == seatNumber);
-                            
+
                             if (booking != null)
                             {
                                 booking.Status = "Đã xác nhận";
@@ -186,7 +186,7 @@ namespace GarageManagementSystem.FormUser.Pages
                     }
 
                     // Validate that the ticket ID exists in the database
-                    var ticketExists = _context.BookedTickets.Any(b => b.BookingID == ticketId);
+                    var ticketExists = _context.BookedTickets.Any(b => b.TicketID == ticketId);
                     if (!ticketExists)
                     {
                         MessageBox.Show("Invalid ticket ID. Order creation failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

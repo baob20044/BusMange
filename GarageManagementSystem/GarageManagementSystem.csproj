@@ -283,6 +283,36 @@
     <Compile Include="Component\Admin\AdminTicket\AdminTicketComp.Designer.cs">
       <DependentUpon>AdminTicketComp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\Admin\AdminTicket\BusAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\BusAdd.Designer.cs">
+      <DependentUpon>BusAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\BusDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\BusDetail.Designer.cs">
+      <DependentUpon>BusDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\BusDetailComp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\BusDetailComp.Designer.cs">
+      <DependentUpon>BusDetailComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\StaffInBus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\StaffInBus.Designer.cs">
+      <DependentUpon>StaffInBus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\StaffComp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Admin\AdminTicket\StaffComp.Designer.cs">
+      <DependentUpon>StaffComp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\Admin\AdminTicket\TicketAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -540,6 +570,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\Admin\AdminTicket\AdminTicketComp.resx">
       <DependentUpon>AdminTicketComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminTicket\BusAdd.resx">
+      <DependentUpon>BusAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminTicket\BusDetail.resx">
+      <DependentUpon>BusDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminTicket\BusDetailComp.resx">
+      <DependentUpon>BusDetailComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminTicket\StaffInBus.resx">
+      <DependentUpon>StaffInBus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Admin\AdminTicket\StaffComp.resx">
+      <DependentUpon>StaffComp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\Admin\AdminTicket\TicketAdd.resx">
       <DependentUpon>TicketAdd.cs</DependentUpon>

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketAddAccordingDate));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAddBus = new Guna.UI2.WinForms.Guna2ImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.cbBusNumber = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbSchedule = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -39,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnViewDetail = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +49,8 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 5;
+            this.guna2Panel1.Controls.Add(this.btnViewDetail);
+            this.guna2Panel1.Controls.Add(this.btnAddBus);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.cbBusNumber);
             this.guna2Panel1.Controls.Add(this.cbSchedule);
@@ -61,6 +65,22 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(858, 308);
             this.guna2Panel1.TabIndex = 8;
+            // 
+            // btnAddBus
+            // 
+            this.btnAddBus.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddBus.CheckedState.Parent = this.btnAddBus;
+            this.btnAddBus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddBus.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnAddBus.HoverState.Parent = this.btnAddBus;
+            this.btnAddBus.Image = ((System.Drawing.Image)(resources.GetObject("btnAddBus.Image")));
+            this.btnAddBus.Location = new System.Drawing.Point(562, 123);
+            this.btnAddBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddBus.Name = "btnAddBus";
+            this.btnAddBus.PressedState.Parent = this.btnAddBus;
+            this.btnAddBus.Size = new System.Drawing.Size(35, 25);
+            this.btnAddBus.TabIndex = 121;
+            this.btnAddBus.Click += new System.EventHandler(this.btnAddBus_Click);
             // 
             // label1
             // 
@@ -197,6 +217,22 @@
             this.btnClose.TabIndex = 89;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnViewDetail
+            // 
+            this.btnViewDetail.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewDetail.CheckedState.Parent = this.btnViewDetail;
+            this.btnViewDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewDetail.HoverState.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnViewDetail.HoverState.Parent = this.btnViewDetail;
+            this.btnViewDetail.Image = ((System.Drawing.Image)(resources.GetObject("btnViewDetail.Image")));
+            this.btnViewDetail.Location = new System.Drawing.Point(604, 121);
+            this.btnViewDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewDetail.Name = "btnViewDetail";
+            this.btnViewDetail.PressedState.Parent = this.btnViewDetail;
+            this.btnViewDetail.Size = new System.Drawing.Size(30, 30);
+            this.btnViewDetail.TabIndex = 122;
+            this.btnViewDetail.Click += new System.EventHandler(this.btnViewDetail_Click);
+            // 
             // TicketAddAccordingDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -223,5 +259,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbBusNumber;
         private Guna.UI2.WinForms.Guna2ComboBox cbSchedule;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ImageButton btnAddBus;
+        private Guna.UI2.WinForms.Guna2ImageButton btnViewDetail;
     }
 }
